@@ -10,36 +10,40 @@ export default function Hero() {
         alt="Unify Gym interior"
         fill
         priority
-        className="object-cover scale-105 animate-[zoom-in_1.5s_ease-out_forwards]"
+        className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+      {/* Much darker overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 grid place-items-center px-4">
-        <div className="text-center space-y-10 animate-[fade-up_1s_ease-out_0.5s_both] max-w-4xl">
-          <div className="inline-block border-2 border-white/90 px-16 py-10 backdrop-blur-sm bg-black/20 rounded-lg shadow-2xl animate-[glow_2s_ease-in-out_infinite_alternate]">
-            <h1 className="font-display text-7xl md:text-9xl lg:text-[8rem] tracking-wide2 text-white drop-shadow-2xl">
+        <div className="text-center space-y-10 max-w-5xl">
+          {/* Main heading with solid background */}
+          <div className="bg-black/90 border-4 border-white px-20 py-12 rounded-xl shadow-2xl">
+            <h1 className="font-display text-7xl md:text-9xl lg:text-[10rem] tracking-wide2 text-white font-black">
               UNIFY GYM
             </h1>
           </div>
           
-          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6">
+          {/* Typewriter text with solid background */}
+          <div className="bg-black/90 rounded-xl p-8 border-2 border-white/50">
             <TypewriterText />
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
+          {/* Buttons with solid backgrounds */}
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
             <a 
               href="https://calendly.com/unifygym"
-              target="_blank"
+              target="_blank" 
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-lg font-bold uppercase tracking-wide2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25 text-lg border-2 border-primary"
+              style={{ backgroundColor: '#00C2FF', color: 'white' }}
+              className="inline-block px-12 py-6 rounded-xl font-black uppercase tracking-wide text-xl border-4 border-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
             >
-              <span className="relative z-10">📅 Book Your Session</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              📅 BOOK YOUR SESSION
             </a>
             <Link 
-              href="/facility" 
-              className="btn-ghost hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-lg px-8 py-4"
+              href="/facility"
+              className="inline-block bg-white text-black px-10 py-5 rounded-xl font-bold uppercase tracking-wide text-lg border-4 border-white shadow-2xl hover:bg-gray-100 transition-all duration-300"
             >
-              Explore the gym
+              EXPLORE THE GYM
             </Link>
           </div>
         </div>

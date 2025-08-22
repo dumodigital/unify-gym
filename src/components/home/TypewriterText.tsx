@@ -50,9 +50,9 @@ export default function TypewriterText() {
   }, [currentText, currentPhraseIndex, isDeleting, isPaused]);
 
   return (
-    <p className="max-w-3xl text-white mx-auto text-xl md:text-2xl min-h-[4rem] flex items-center justify-center font-medium drop-shadow-lg">
+    <p className="max-w-4xl text-white mx-auto text-2xl md:text-3xl min-h-[5rem] flex items-center justify-center font-bold">
       <span>{currentText}</span>
-      <span className="ml-1 animate-pulse text-primary">|</span>
+      <span className="ml-2 animate-pulse text-blue-400 text-4xl">|</span>
     </p>
   );
 }
