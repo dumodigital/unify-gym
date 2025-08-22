@@ -54,16 +54,18 @@ export default function Brand() {
         </div>
 
         {/* Staggered heading animation */}
-        <h2 className="relative inline-block font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2 mb-6">
-          <span className="relative z-10">{renderStaggeredText('UNIFY FITNESS')}</span>
-          <span className="absolute -bottom-1 left-0 w-full h-[0.6em]">
+        <div className="relative mb-6">
+          <h2 className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2">
+            {renderStaggeredText('UNIFY FITNESS')}
+          </h2>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full max-w-[80%] h-8 md:h-12">
             <img
               src="/brand-underline.svg"
               alt=""
-              className="w-full h-full object-contain object-bottom"
+              className="w-full h-full object-contain opacity-80"
             />
-          </span>
-        </h2>
+          </div>
+        </div>
 
         {/* Copy with fade-in from left */}
         <p className={`text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto mb-10 scroll-fade-left ${isVisible ? 'animate' : ''}`}
