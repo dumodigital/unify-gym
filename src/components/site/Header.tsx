@@ -29,7 +29,7 @@ export default function Header() {
         mounted && scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">{/* Fixed header */}
         <Link href="/" className="flex items-center">
           <Image
             src="/content/home/Unify-Fitness.png"
