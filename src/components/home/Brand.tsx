@@ -42,17 +42,6 @@ export default function Brand() {
       className="-mt-10 relative z-10 animated-gradient text-neutral-50"
     >
       <div className="mx-auto max-w-3xl px-6 py-20 text-center">
-        {/* UF mark with scale animation */}
-        <div className={`relative mx-auto h-48 w-48 mb-8 scroll-scale ${isVisible ? 'animate' : ''}`}>
-          <Image
-            src="/content/home/Unify-Fitness.png"
-            alt="UF mark"
-            fill
-            className="object-contain brightness-0 invert"
-            sizes="192px"
-          />
-        </div>
-
         {/* Staggered heading animation */}
         <div className="relative mb-6">
           <h2 className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2">
