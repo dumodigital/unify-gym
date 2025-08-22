@@ -43,13 +43,13 @@ export default function Brand() {
     >
       <div className="mx-auto max-w-3xl px-6 py-20 text-center">
         {/* UF mark with scale animation */}
-        <div className={`relative mx-auto h-20 w-20 mb-8 scroll-scale ${isVisible ? 'animate' : ''}`}>
+        <div className={`relative mx-auto h-24 w-24 mb-8 scroll-scale ${isVisible ? 'animate' : ''}`}>
           <Image
             src="/content/home/Unify-Fitness.png"
             alt="UF mark"
             fill
             className="object-contain brightness-0 invert"
-            sizes="80px"
+            sizes="96px"
           />
         </div>
 
