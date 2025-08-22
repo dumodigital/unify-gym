@@ -36,7 +36,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
             >
-              📅 Book Your Session
+              Book Your Session
             </a>
             <Link 
               href="/facility"
@@ -45,13 +45,6 @@ export default function Hero() {
               Explore the Gym
             </Link>
           </div>
-        </div>
-      </div>
-      
-      {/* Animated scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-white/60 rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>
