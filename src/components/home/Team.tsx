@@ -38,7 +38,7 @@ export default function Team() {
           {staff.map((s) => <Card key={s.name} s={s} />)}
         </div>
         <div className="mt-10 text-center">
-          <a href="/trainers" className="btn-outline-dark">Meet our other team members</a>
+          <Link href="/trainers" className="btn-outline-dark">Meet our other team members</Link>
         </div>
       </div>
     </section>
