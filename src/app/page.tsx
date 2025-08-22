@@ -1,16 +1,31 @@
-import { FaDumbbell } from 'react-icons/fa6';
+import Header from '@/components/site/Header';
+import Footer from '@/components/site/Footer';
+import Hero from '@/components/home/Hero';
+import Brand from '@/components/home/Brand';
+import Tiles from '@/components/home/Tiles';
+import Team from '@/components/home/Team';
+import Services from '@/components/home/Services';
+import VideoBanner from '@/components/home/VideoBanner';
+import Schedule from '@/components/home/Schedule';
+import Map from '@/components/home/Map';
+import Contact from '@/components/home/Contact';
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <main className="min-h-[60vh] grid place-items-center">
-      <div className="text-center space-y-4">
-        <h1 className="font-display text-5xl tracking-wide2">Unify Gym</h1>
-        <p className="text-neutral-300">Stack sanity check</p>
-        <div className="inline-flex items-center gap-2 text-primary">
-          <FaDumbbell aria-hidden />
-          <span>React 19 • Next 15 • Tailwind 4</span>
-        </div>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main className="pt-16">
+        <Hero />
+        <Brand />
+        <Tiles />
+        <Team />
+        <Services />
+        <VideoBanner />
+        <Schedule />
+        <Map />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
