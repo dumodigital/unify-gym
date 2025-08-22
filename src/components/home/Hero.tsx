@@ -19,35 +19,23 @@ export default function Hero() {
           {/* Split-Screen Animated Heading */}
           <div className="overflow-hidden">
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg">
-              <span 
-                className="inline-block animate-[slide-in-left_1.2s_cubic-bezier(0.25,0.46,0.45,0.94)]"
-                style={{ animationFillMode: 'both' }}
-              >
+              <span className="split-left">
                 UNIFY
               </span>
               <span className="mx-4"></span>
-              <span 
-                className="inline-block animate-[slide-in-right_1.2s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s]"
-                style={{ animationFillMode: 'both' }}
-              >
+              <span className="split-right">
                 GYM
               </span>
             </h1>
           </div>
           
           {/* Typewriter text with delayed entrance */}
-          <div 
-            className="animate-[fade-in-delayed_1s_ease-out_1.5s]"
-            style={{ animationFillMode: 'both' }}
-          >
+          <div className="typewriter-delayed">
             <TypewriterText />
           </div>
           
           {/* Buttons with delayed entrance */}
-          <div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-[fade-in-delayed_1s_ease-out_2s]"
-            style={{ animationFillMode: 'both' }}
-          >
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 buttons-delayed">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 
