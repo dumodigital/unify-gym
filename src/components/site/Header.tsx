@@ -34,9 +34,9 @@ export default function Header() {
           <Image
             src="/content/home/Unify-Fitness.png"
             alt="Unify Fitness"
-            width={200}
-            height={60}
-            className="h-16 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
+            width={250}
+            height={75}
+            className="h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
             style={{filter: 'brightness(0) invert(1)'}}
           />
         </Link>
