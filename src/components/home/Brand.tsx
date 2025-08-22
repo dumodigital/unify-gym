@@ -54,8 +54,15 @@ export default function Brand() {
         </div>
 
         {/* Staggered heading animation */}
-        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2 mb-6">
-          {renderStaggeredText('UNIFY FITNESS')}
+        <h2 className="relative inline-block font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2 mb-6">
+          <span className="relative z-10">{renderStaggeredText('UNIFY FITNESS')}</span>
+          <span className="absolute -bottom-1 left-0 w-full h-[0.6em]">
+            <img
+              src="/brand-underline.svg"
+              alt=""
+              className="w-full h-full object-contain object-bottom"
+            />
+          </span>
         </h2>
 
         {/* Copy with fade-in from left */}
