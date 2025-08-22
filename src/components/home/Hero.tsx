@@ -16,20 +16,38 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 grid place-items-center px-4">
         <div className="text-center space-y-8 max-w-4xl">
-          {/* Clean heading */}
-          <div>
+          {/* Split-Screen Animated Heading */}
+          <div className="overflow-hidden">
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg">
-              UNIFY GYM
+              <span 
+                className="inline-block animate-[slide-in-left_1.2s_cubic-bezier(0.25,0.46,0.45,0.94)]"
+                style={{ animationFillMode: 'both' }}
+              >
+                UNIFY
+              </span>
+              <span className="mx-4"></span>
+              <span 
+                className="inline-block animate-[slide-in-right_1.2s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s]"
+                style={{ animationFillMode: 'both' }}
+              >
+                GYM
+              </span>
             </h1>
           </div>
           
-          {/* Typewriter text */}
-          <div>
+          {/* Typewriter text with delayed entrance */}
+          <div 
+            className="animate-[fade-in-delayed_1s_ease-out_1.5s]"
+            style={{ animationFillMode: 'both' }}
+          >
             <TypewriterText />
           </div>
           
-          {/* Clean buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+          {/* Buttons with delayed entrance */}
+          <div 
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-[fade-in-delayed_1s_ease-out_2s]"
+            style={{ animationFillMode: 'both' }}
+          >
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 

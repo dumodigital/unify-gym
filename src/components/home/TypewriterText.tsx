@@ -15,8 +15,19 @@ export default function TypewriterText() {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  // Start typewriter effect after header animation completes
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setHasStarted(true);
+    }, 1800); // Start after header animation (1.2s + 0.6s delay)
+    
+    return () => clearTimeout(startTimer);
+  }, []);
 
   useEffect(() => {
+    if (!hasStarted) return;
     const currentPhrase = phrases[currentPhraseIndex];
     
     if (isPaused) {
@@ -47,7 +58,7 @@ export default function TypewriterText() {
     }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timer);
-  }, [currentText, currentPhraseIndex, isDeleting, isPaused]);
+  }, [currentText, currentPhraseIndex, isDeleting, isPaused, hasStarted]);
 
   return (
     <p className="max-w-3xl text-white mx-auto text-lg md:text-xl min-h-[3rem] flex items-center justify-center font-medium">
