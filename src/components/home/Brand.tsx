@@ -47,7 +47,7 @@ export default function Brand() {
           <h2 className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2">
             {renderStaggeredText('UNIFY FITNESS')}
           </h2>
-          <div className="absolute -bottom-2 left-0 w-full h-1.5 bg-primary opacity-80"></div>
+          <div className="absolute -bottom-2 left-[10%] w-4/5 h-1.5 bg-primary opacity-80"></div>
         </div>
 
         {/* Copy with fade-in from left */}
