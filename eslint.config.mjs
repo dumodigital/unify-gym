@@ -1,16 +1,17 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+export default [
+  { ignores: ['.next/**', 'dist/**', 'node_modules/**'] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    plugins: { 'react-refresh': reactRefresh },
+    rules: {
+      'react-refresh/only-export-components': 'warn',
+      'no-console': ['warn', { allow: ['error', 'warn'] }]
+    },
+    languageOptions: { parserOptions: { ecmaVersion: 'latest', sourceType: 'module' } }
+  }
 ];
-
-export default eslintConfig;
