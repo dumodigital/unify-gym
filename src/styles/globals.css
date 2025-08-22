@@ -34,7 +34,7 @@
 
 /* Ghost (outline) button utility */
 .btn-ghost {
-  @apply inline-flex items-center gap-2 rounded-md border border-white/70 px-5 py-2 text-white uppercase tracking-wide2 hover:bg-white hover:text-neutral-900 transition;
+  @apply inline-flex items-center gap-2 rounded-md border-2 border-white/80 px-6 py-3 text-white uppercase tracking-wide2 hover:bg-white hover:text-neutral-900 transition font-semibold;
 }
 .btn-outline-dark {
   @apply inline-flex items-center gap-2 rounded-md border border-neutral-900 px-5 py-2 text-neutral-900 uppercase tracking-wide2 hover:bg-neutral-900 hover:text-white transition;

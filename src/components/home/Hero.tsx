@@ -12,30 +12,32 @@ export default function Hero() {
         priority
         className="object-cover scale-105 animate-[zoom-in_1.5s_ease-out_forwards]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
       <div className="absolute inset-0 grid place-items-center px-4">
-        <div className="text-center space-y-8 animate-[fade-up_1s_ease-out_0.5s_both]">
-          <div className="inline-block border-2 border-white/80 px-12 py-8 backdrop-blur-sm bg-white/5 rounded-lg shadow-2xl animate-[glow_2s_ease-in-out_infinite_alternate]">
-            <h1 className="font-display text-6xl md:text-8xl tracking-wide2 text-white drop-shadow-lg">
+        <div className="text-center space-y-10 animate-[fade-up_1s_ease-out_0.5s_both] max-w-4xl">
+          <div className="inline-block border-2 border-white/90 px-16 py-10 backdrop-blur-sm bg-black/20 rounded-lg shadow-2xl animate-[glow_2s_ease-in-out_infinite_alternate]">
+            <h1 className="font-display text-7xl md:text-9xl lg:text-[8rem] tracking-wide2 text-white drop-shadow-2xl">
               UNIFY GYM
             </h1>
           </div>
           
-          <TypewriterText />
+          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6">
+            <TypewriterText />
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold uppercase tracking-wide2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25"
+              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-lg font-bold uppercase tracking-wide2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25 text-lg border-2 border-primary"
             >
-              <span className="relative z-10">Book Your Session</span>
+              <span className="relative z-10">📅 Book Your Session</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <Link 
               href="/facility" 
-              className="btn-ghost hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+              className="btn-ghost hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-lg px-8 py-4"
             >
               Explore the gym
             </Link>
