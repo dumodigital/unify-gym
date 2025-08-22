@@ -7,15 +7,15 @@ export default function Brand() {
     // Dark band that overlaps hero and fades in/out
     <section className="-mt-10 bg-neutral-950 text-neutral-50 top-vignette bottom-vignette relative z-10">
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
-        {/* Floating brand card with enhanced styling */}
-        <div className="mx-auto max-w-4xl rounded-[2rem] brand-card shadow-2xl overflow-hidden">
-          {/* Enhanced top accent with gradient */}
-          <div className="h-1.5 bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-800" />
+        {/* ACTUAL Floating brand card - ensuring white background shows */}
+        <div className="mx-auto max-w-4xl rounded-3xl bg-white text-neutral-900 shadow-2xl overflow-hidden border border-white/20">
+          {/* Top accent bar */}
+          <div className="h-1 bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-800" />
 
-          <div className="px-8 md:px-12 py-12 md:py-16">
-            {/* Floating brand mark */}
+          <div className="bg-white px-8 md:px-12 py-12 md:py-16">
+            {/* Brand mark */}
             <div className="mx-auto mb-8 grid place-items-center">
-              <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-neutral-100 bg-white shadow-lg brand-mark">
+              <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-neutral-200 bg-white shadow-lg">
                 <Image
                   src="/content/home/brand.jpg"
                   alt="UF mark"
@@ -26,42 +26,51 @@ export default function Brand() {
               </span>
             </div>
 
-            {/* Enhanced headline with better spacing */}
-            <h2 className="text-center font-display tracking-wide2 text-3xl md:text-5xl mb-2">
+            {/* Headline */}
+            <h2 className="text-center font-display tracking-wide2 text-3xl md:text-4xl text-neutral-900 mb-2">
               UNIFY FITNESS
             </h2>
             
-            {/* Subtle tagline */}
+            {/* Divider */}
             <div className="text-center mb-8">
-              <div className="inline-block h-0.5 w-16 bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
+              <div className="inline-block h-0.5 w-16 bg-gradient-to-r from-transparent via-neutral-400 to-transparent" />
             </div>
 
-            {/* Enhanced copy with better typography */}
+            {/* Copy */}
             <p className="text-center text-neutral-600 leading-relaxed text-lg max-w-2xl mx-auto mb-10">
               Our philosophy unifies the 3 major aspects of health &amp; fitness – Mind, Body &amp; Spirit.
               We challenge the norm with options for all skill levels to create a personal experience—from
               beginners building a solid foundation to advanced trainees forging a powerful physique.
             </p>
 
-            {/* Enhanced feature cards with better spacing */}
+            {/* Feature cards - FIXED to be visible */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-              <Feature icon={<FaDumbbell />} label="Certified Coaches" />
-              <Feature icon={<FaHeartPulse />} label="Strength & Conditioning" />
-              <Feature icon={<FaUsers />} label="Community First" />
+              <div className="flex items-center justify-center gap-3 rounded-xl border-2 border-neutral-200 bg-white px-6 py-4 text-neutral-700 shadow-sm hover:shadow-md transition-all hover:border-neutral-300">
+                <FaDumbbell className="text-neutral-800 text-lg" />
+                <span className="uppercase tracking-wide text-xs font-semibold text-neutral-800">Certified Coaches</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 rounded-xl border-2 border-neutral-200 bg-white px-6 py-4 text-neutral-700 shadow-sm hover:shadow-md transition-all hover:border-neutral-300">
+                <FaHeartPulse className="text-neutral-800 text-lg" />
+                <span className="uppercase tracking-wide text-xs font-semibold text-neutral-800">Strength & Conditioning</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 rounded-xl border-2 border-neutral-200 bg-white px-6 py-4 text-neutral-700 shadow-sm hover:shadow-md transition-all hover:border-neutral-300">
+                <FaUsers className="text-neutral-800 text-lg" />
+                <span className="uppercase tracking-wide text-xs font-semibold text-neutral-800">Community First</span>
+              </div>
             </div>
 
-            {/* Enhanced CTAs with better spacing and styling */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link 
                 href="/trainers" 
-                className="btn-outline-enhanced inline-flex items-center gap-2 rounded-xl px-8 py-4 text-neutral-900 uppercase tracking-wide2 font-semibold text-sm w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-neutral-900 bg-white px-8 py-4 text-neutral-900 uppercase tracking-wide font-semibold text-sm hover:bg-neutral-900 hover:text-white transition-all w-full sm:w-auto justify-center"
               >
                 <FaUsers className="text-base" />
                 Meet the trainers
               </Link>
               <Link
                 href="/membership"
-                className="btn-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-white uppercase tracking-wide2 font-semibold text-sm w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-8 py-4 text-white uppercase tracking-wide font-semibold text-sm hover:bg-neutral-800 transition-all shadow-lg w-full sm:w-auto justify-center"
               >
                 <FaDumbbell className="text-base" />
                 Explore membership
@@ -71,26 +80,12 @@ export default function Brand() {
         </div>
       </div>
 
-      {/* Enhanced ultra-subtle vertical watermark */}
-      <div className="pointer-events-none absolute left-3 sm:left-8 top-12 bottom-12 hidden lg:block">
-        <div className="h-full text-9xl font-display watermark-vertical opacity-[0.03] text-white/60 select-none">
+      {/* Watermark on the dark background */}
+      <div className="pointer-events-none absolute left-6 top-12 bottom-12 hidden lg:block">
+        <div className="h-full text-8xl font-display watermark-vertical opacity-[0.04] text-white select-none">
           GYM
         </div>
       </div>
-
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
-      </div>
     </section>
-  );
-}
-
-function Feature({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <div className="feature-card flex items-center justify-center gap-3 rounded-2xl border border-neutral-100 px-6 py-5 text-neutral-700 group">
-      <span className="text-neutral-800 text-lg group-hover:scale-110 transition-transform duration-300">{icon}</span>
-      <span className="uppercase tracking-wide2 text-xs font-medium">{label}</span>
-    </div>
   );
 }
