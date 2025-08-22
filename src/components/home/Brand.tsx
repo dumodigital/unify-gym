@@ -47,7 +47,7 @@ export default function Brand() {
           <h2 className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2">
             {renderStaggeredText('UNIFY FITNESS')}
           </h2>
-          <div className="absolute -bottom-1 left-[30%] w-[40%] h-2">
+          <div className="absolute -bottom-1 left-[20%] w-[35%] h-2">
             <img
               src="/brand-underline.svg"
               alt=""
