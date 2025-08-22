@@ -62,14 +62,14 @@ export default function Brand() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/trainers"
-            className={`px-8 py-4 rounded-lg border-2 border-neutral-400 text-neutral-200 uppercase tracking-wide2 text-sm font-semibold hover:bg-neutral-800 hover:border-neutral-300 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,194,255,0.3)] hover:shadow-[0_0_30px_rgba(0,194,255,0.5)] scroll-fade-in ${isVisible ? 'animate' : ''}`}
+            className={`px-8 py-4 rounded-lg border-2 border-neutral-400 text-neutral-200 uppercase tracking-wide2 text-sm font-semibold hover:bg-neutral-800 hover:border-neutral-300 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 shadow-[0_0_25px_rgba(0,194,255,0.6)] hover:shadow-[0_0_40px_rgba(0,194,255,0.8)] scroll-fade-in ${isVisible ? 'animate' : ''}`}
             style={{ transitionDelay: '1.6s' }}
           >
             Meet the Trainers
           </Link>
           <Link
             href="/membership"
-            className={`px-8 py-4 rounded-lg bg-white text-neutral-950 uppercase tracking-wide2 text-sm font-semibold hover:bg-neutral-100 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,194,255,0.3)] hover:shadow-[0_0_30px_rgba(0,194,255,0.5)] scroll-fade-in ${isVisible ? 'animate' : ''}`}
+            className={`px-8 py-4 rounded-lg bg-white text-neutral-950 uppercase tracking-wide2 text-sm font-semibold hover:bg-neutral-100 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 shadow-[0_0_25px_rgba(0,194,255,0.6)] hover:shadow-[0_0_40px_rgba(0,194,255,0.8)] scroll-fade-in ${isVisible ? 'animate' : ''}`}
             style={{ transitionDelay: '1.8s' }}
           >
             Explore Membership
