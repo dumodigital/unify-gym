@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <section className="relative isolate h-[90vh] min-h-[560px]">
       <Image
-        src="/content/home/hero.jpg"
-        alt="Gym interior"
+        src="/content/home/Unify-gym-hero.webp"
+        alt="Unify Gym interior"
         fill
         priority
         className="object-cover"
