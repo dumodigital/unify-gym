@@ -12,38 +12,37 @@ export default function Hero() {
         priority
         className="object-cover"
       />
-      {/* Much darker overlay for better contrast */}
-      <div className="absolute inset-0 bg-black/70" />
+      {/* Professional gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80" />
       <div className="absolute inset-0 grid place-items-center px-4">
-        <div className="text-center space-y-10 max-w-5xl">
-          {/* Main heading with solid background */}
-          <div className="bg-black/90 border-4 border-white px-20 py-12 rounded-xl shadow-2xl">
-            <h1 className="font-display text-7xl md:text-9xl lg:text-[10rem] tracking-wide2 text-white font-black">
+        <div className="text-center space-y-8 max-w-4xl">
+          {/* Clean, professional heading */}
+          <div>
+            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-2xl">
               UNIFY GYM
             </h1>
           </div>
           
-          {/* Typewriter text with solid background */}
-          <div className="bg-black/90 rounded-xl p-8 border-2 border-white/50">
+          {/* Typewriter text with subtle background */}
+          <div className="backdrop-blur-sm bg-black/30 rounded-lg p-6">
             <TypewriterText />
           </div>
           
-          {/* Buttons with solid backgrounds */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
+          {/* Professional buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ backgroundColor: '#00C2FF', color: 'white' }}
-              className="inline-block px-12 py-6 rounded-xl font-black uppercase tracking-wide text-xl border-4 border-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold uppercase tracking-wide text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-blue-400"
             >
-              📅 BOOK YOUR SESSION
+              📅 Book Your Session
             </a>
             <Link 
               href="/facility"
-              className="inline-block bg-white text-black px-10 py-5 rounded-xl font-bold uppercase tracking-wide text-lg border-4 border-white shadow-2xl hover:bg-gray-100 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-semibold uppercase tracking-wide text-lg transition-all duration-300"
             >
-              EXPLORE THE GYM
+              Explore the Gym
             </Link>
           </div>
         </div>
