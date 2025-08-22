@@ -7,7 +7,7 @@ export default function Section({
 }: {
   className?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: keyof JSX.IntrinsicElements;
 }) {
   return <Tag className={cn('px-4 py-16 sm:py-20', className)}>{children}</Tag>;
 }

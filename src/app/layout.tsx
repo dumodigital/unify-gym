@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
-      <body className="font-sans bg-neutral-950 text-neutral-50 antialiased">{children}</body>
+      <body className="font-sans bg-black text-neutral-50 antialiased">{children}</body>
     </html>
   );
 }

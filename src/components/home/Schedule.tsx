@@ -5,7 +5,7 @@ const tabs = ['All Events', 'Cardio', 'CrossFit', 'Gym', 'Powerlifting'] as cons
 
 export default function Schedule() {
   const [active, setActive] = useState<typeof tabs[number]>('Powerlifting');
-  const events: any[] = []; // placeholder
+  const events: Array<{ id: string; title: string; time: string }> = []; // placeholder
 
   return (
     <section className="bg-neutral-900 text-neutral-50">
