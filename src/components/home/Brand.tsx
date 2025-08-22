@@ -1,58 +1,52 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaDumbbell, FaHeartPulse, FaUsers } from 'react-icons/fa6';
 
 export default function Brand() {
   return (
-    // slight overlap so it "belongs" to the hero
-    <section className="-mt-12 relative z-10 bg-white text-neutral-900">
-      {/* tuck into hero with a soft top fade */}
-      <div className="absolute -top-6 left-0 right-0 h-6 bg-gradient-to-b from-black/25 to-transparent pointer-events-none" />
+    // Dark band that overlaps hero and fades in/out
+    <section className="-mt-10 bg-neutral-950 text-neutral-50 top-vignette bottom-vignette relative z-10">
+      <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+        {/* Floating brand card */}
+        <div className="mx-auto max-w-3xl rounded-3xl bg-white text-neutral-900 card-ring shadow-xl overflow-hidden">
+          {/* small top accent bar to echo the brand */}
+          <div className="h-1 bg-neutral-900" />
 
-      <div className="relative grain overflow-hidden">
-        {/* faint vertical watermark, very subtle */}
-        <div className="absolute left-6 md:left-14 top-8 text-7xl md:text-8xl font-display watermark-vertical select-none">
-          GYM
-        </div>
+          <div className="px-6 md:px-10 py-10 md:py-12">
+            {/* mini UF mark */}
+            <div className="mx-auto mb-5 grid place-items-center">
+              <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white">
+                <Image
+                  src="/content/home/brand.jpg"
+                  alt="UF mark"
+                  fill
+                  className="object-cover rounded-full"
+                  sizes="56px"
+                />
+              </span>
+            </div>
 
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-          {/* mini UF mark */}
-          <div className="mx-auto mb-6 grid place-items-center">
-            <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white">
-              <Image
-                src="/content/home/brand.jpg"
-                alt="UF mark"
-                fill
-                className="object-cover rounded-full"
-                sizes="56px"
-              />
-            </span>
-          </div>
+            {/* headline */}
+            <h2 className="text-center font-display tracking-wide2 text-[28px] md:text-4xl">
+              UNIFY FITNESS
+            </h2>
 
-          {/* headline */}
-          <h2 className="text-center font-display tracking-wide2 text-3xl md:text-4xl">
-            UNIFY FITNESS
-          </h2>
-
-          {/* delicate divider */}
-          <div className="mx-auto mt-4 w-40 md:w-56 hr-fade" />
-
-          {/* copy + micro‑features + CTAs */}
-          <div className="mx-auto mt-6 grid max-w-3xl gap-8">
-            <p className="text-center text-neutral-700 leading-relaxed">
+            {/* copy */}
+            <p className="mt-4 text-center text-neutral-700 leading-relaxed">
               Our philosophy unifies the 3 major aspects of health &amp; fitness – Mind, Body &amp; Spirit.
               We challenge the norm with options for all skill levels to create a personal experience—from
               beginners building a solid foundation to advanced trainees forging a powerful physique.
             </p>
 
-            {/* stat chips (keeps it lively without heavy visuals) */}
-            <ul className="flex flex-wrap items-center justify-center gap-3 text-[11px] uppercase tracking-wide">
-              <li className="rounded-full border border-neutral-200 px-3 py-1 text-neutral-600">Certified Coaches</li>
-              <li className="rounded-full border border-neutral-200 px-3 py-1 text-neutral-600">Strength • Conditioning</li>
-              <li className="rounded-full border border-neutral-200 px-3 py-1 text-neutral-600">Community First</li>
-            </ul>
+            {/* mini features (icon row) */}
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+              <Feature icon={<FaDumbbell />} label="Certified Coaches" />
+              <Feature icon={<FaHeartPulse />} label="Strength & Conditioning" />
+              <Feature icon={<FaUsers />} label="Community First" />
+            </div>
 
-            {/* dual CTAs: outline + solid dark */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* CTAs */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link href="/trainers" className="btn-outline-dark">Meet the trainers</Link>
               <Link
                 href="/membership"
@@ -64,6 +58,22 @@ export default function Brand() {
           </div>
         </div>
       </div>
+
+      {/* ultra-subtle vertical watermark on the left edge of the band (not inside the card) */}
+      <div className="pointer-events-none absolute left-2 sm:left-6 top-10 bottom-10 hidden md:block">
+        <div className="h-full text-8xl font-display watermark-vertical opacity-[0.05] text-white/80 select-none">
+          GYM
+        </div>
+      </div>
     </section>
+  );
+}
+
+function Feature({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <div className="flex items-center justify-center gap-2 rounded-xl border border-neutral-200/70 bg-white px-4 py-3 text-neutral-700">
+      <span className="text-neutral-900">{icon}</span>
+      <span className="uppercase tracking-wide2 text-[11px]">{label}</span>
+    </div>
   );
 }

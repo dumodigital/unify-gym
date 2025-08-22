@@ -111,3 +111,19 @@
   mix-blend-mode:soft-light;
 }
 .hr-fade{height:1px;width:100%;background:linear-gradient(90deg,transparent,rgba(0,0,0,.25),transparent)}
+
+/* soft top/bottom vignettes used to blend with hero/next section */
+.top-vignette { position: relative; }
+.top-vignette::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:72px;
+  background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0));
+  pointer-events:none;
+}
+.bottom-vignette { position: relative; }
+.bottom-vignette::after{
+  content:""; position:absolute; inset:auto 0 0 0; height:56px;
+  background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.65));
+  pointer-events:none;
+}
+/* subtle ring for light cards on dark bg */
+.card-ring { box-shadow: 0 1px 0 0 rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.06) inset; }
