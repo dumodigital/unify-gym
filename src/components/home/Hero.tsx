@@ -28,22 +28,19 @@ export default function Hero() {
             <TypewriterText />
           </div>
           
-          {/* Minimalist buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+          {/* Clean buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 
               rel="noopener noreferrer"
-              className="group border-2 border-white text-white hover:bg-white hover:text-black px-8 py-3 font-semibold uppercase tracking-wide transition-all duration-300 hover:scale-105"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
             >
-              <span className="flex items-center gap-2">
-                <span>📅</span>
-                <span>Book Your Session</span>
-              </span>
+              📅 Book Your Session
             </a>
             <Link 
               href="/facility"
-              className="group border-2 border-white text-white hover:bg-white hover:text-black px-8 py-3 font-semibold uppercase tracking-wide transition-all duration-300 hover:scale-105"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
             >
               Explore the Gym
             </Link>
