@@ -27,14 +27,24 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  images: { formats: ['image/avif', 'image/webp'] },
+  images: { 
+    formats: ['image/avif', 'image/webp'],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+  },
   compress: true,
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },
       {
         source: '/:all*(svg|jpg|jpeg|png|gif|webp|avif|js|css|woff2)',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
+        headers: [{ 
+          key: 'Cache-Control', 
+          value: process.env.NODE_ENV === 'development' 
+            ? 'no-cache, no-store, must-revalidate' 
+            : 'public, max-age=31536000, immutable' 
+        }]
       }
     ];
   }

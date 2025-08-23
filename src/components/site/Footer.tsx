@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaTwitter, FaFacebookF } from 'react-icons/fa6';
 import ScrollToTop from './ScrollToTop';
@@ -10,7 +9,7 @@ export default function Footer() {
         {/* Left: Logo */}
         <div className="space-y-4">
           <div className="relative h-16 w-16">
-            <Image src="/content/home/brand.jpg" alt="Unify Fitness logo" fill className="object-cover rounded-full" />
+            <img src="/content/home/brand.svg" alt="Unify Fitness logo" className="absolute inset-0 w-full h-full object-cover rounded-full" />
           </div>
           <div className="text-2xl font-display">UNIFY <span className="font-normal">FITNESS</span></div>
         </div>

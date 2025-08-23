@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
 
 export default function VideoBanner() {
@@ -8,7 +7,7 @@ export default function VideoBanner() {
     <>
       <section className="relative mx-auto max-w-7xl px-4 py-10">
         <div onClick={() => setOpen(true)} className="relative h-[360px] cursor-pointer overflow-hidden rounded-2xl">
-          <Image src="/content/home/svc-training.jpg" alt="Video teaser" fill className="object-cover" />
+          <img src="/content/home/svc-training.svg" alt="Video teaser" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-overlay-40" />
           <div className="absolute inset-0 grid place-items-center">
             <button className="grid h-16 w-16 place-items-center rounded-full bg-white/90 text-neutral-900 text-2xl" aria-label="Play video">▶</button>

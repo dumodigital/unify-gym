@@ -1,17 +1,16 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram } from 'react-icons/fa6';
 
 const staff = [
-  { name: 'MELISSA CESARE', role: 'Owner / Coach', img: '/content/home/brand.jpg' },
-  { name: 'LESLIE GARRETT', role: 'Owner / Coach', img: '/content/home/brand.jpg' },
-  { name: 'MARY BETH', role: 'Pilates', img: '/content/home/brand.jpg' },
+  { name: 'MELISSA CESARE', role: 'Owner / Coach', img: '/content/home/brand.svg' },
+  { name: 'LESLIE GARRETT', role: 'Owner / Coach', img: '/content/home/brand.svg' },
+  { name: 'MARY BETH', role: 'Pilates', img: '/content/home/brand.svg' },
 ];
 
 function Card({ s }: { s: (typeof staff)[number] }) {
   return (
     <div className="card relative">
-      <Image src={s.img} alt={s.name} width={480} height={600} className="h-80 w-full object-cover" />
+      <img src={s.img} alt={s.name} className="h-80 w-full object-cover" />
       <div className="absolute inset-0 bg-overlay-25" />
       <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
         <div>

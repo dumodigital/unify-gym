@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 
 export default function Contact() {
   return (
@@ -16,7 +16,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="relative h-72 w-full rounded-2xl overflow-hidden">
-          <Image src="/content/home/contact.jpg" alt="Unify storefront" fill className="object-cover" />
+          <img src="/content/home/contact.svg" alt="Unify storefront" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
     </section>
