@@ -219,25 +219,46 @@ export default function GoogleReviews() {
                 ))}
               </div>
             </div>
+            
+            {/* Mobile Navigation Arrows - positioned relative to mobile container */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-20 touch-manipulation"
+              aria-label="Previous review"
+            >
+              <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-20 touch-manipulation"
+              aria-label="Next review"
+            >
+              <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Desktop Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-6 bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-4 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-10"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white/95 backdrop-blur-sm rounded-full p-4 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-10"
             aria-label="Previous review"
           >
-            <svg className="w-4 h-4 md:w-5 md:h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-6 bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-4 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-10"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white/95 backdrop-blur-sm rounded-full p-4 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-10"
             aria-label="Next review"
           >
-            <svg className="w-4 h-4 md:w-5 md:h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </button>
