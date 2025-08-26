@@ -1,3 +1,5 @@
+'use client';
+
 export default function Map() {
   const address = "664 Vernon Avenue, Glencoe, IL 60022";
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;

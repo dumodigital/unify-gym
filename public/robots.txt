@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://unifygym.com
+
+# Sitemaps
+Sitemap: https://unifygym.com/sitemap.xml
