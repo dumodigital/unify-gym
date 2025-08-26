@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import TypewriterText from './TypewriterText';
+import SplitText from './SplitText';
 
 export default function Hero() {
   return (
-    <section className="relative isolate h-[90vh] min-h-[560px] overflow-hidden">
+    <section className="relative isolate h-[100vh] min-h-[700px] overflow-hidden">
       <Image
         src="/content/home/home.jpg"
         alt="Unify Gym interior"
@@ -15,18 +16,22 @@ export default function Hero() {
       {/* Subtle overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 grid place-items-center px-4">
-        <div className="text-center space-y-8 max-w-4xl">
-          {/* Split-Screen Animated Heading */}
+        <div className="text-center space-y-8 max-w-5xl">
+          {/* Animated Heading with SplitText */}
           <div className="overflow-hidden">
-            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg">
-              <span className="split-left">
-                UNIFY
-              </span>
-              <span className="mx-4"></span>
-              <span className="split-right">
-                GYM
-              </span>
-            </h1>
+            <SplitText
+              text="UNIFY FITNESS"
+              className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg whitespace-nowrap"
+              splitType="chars"
+              delay={80}
+              duration={0.8}
+              ease="power3.out"
+              from={{ opacity: 0, y: 100, rotationX: -90 }}
+              to={{ opacity: 1, y: 0, rotationX: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="center"
+            />
           </div>
           
           {/* Typewriter text with delayed entrance */}
@@ -40,13 +45,13 @@ export default function Hero() {
               href="https://calendly.com/unifygym"
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg"
             >
-              Book Your Session
+              Join Today
             </a>
             <Link 
               href="/facility"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg"
             >
               Explore the Gym
             </Link>

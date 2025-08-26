@@ -248,12 +248,33 @@
   }
 }
 
+/* Cool 3D flip and zoom animation for brand heading */
+@keyframes coolFlipIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-90deg) scale(0.8);
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px) rotateX(-20deg) scale(1.1);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
 /* Staggered heading animation */
 .stagger-letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
+  transform: translateY(50px) rotateX(-90deg) scale(0.8);
+  animation: coolFlipIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: center bottom;
+  filter: blur(4px);
 }
 
 .stagger-letter:nth-child(1) { animation-delay: 0.1s; }
@@ -303,3 +324,72 @@
   opacity: 1;
   transform: scale(1);
 }
+
+/* Brand section enhancement */
+.brand-section-background {
+  background: 
+    linear-gradient(135deg, rgba(0, 194, 255, 0.08) 0%, transparent 50%, rgba(0, 194, 255, 0.04) 100%),
+    linear-gradient(45deg, rgba(23, 23, 23, 0.95) 0%, rgba(38, 38, 38, 0.98) 50%, rgba(23, 23, 23, 0.95) 100%),
+    radial-gradient(ellipse at center, rgba(0, 194, 255, 0.06) 0%, transparent 70%);
+}
+
+/* Dark veil fallback animation */
+@keyframes pulse-background {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.darkveil-fallback {
+  animation: pulse-background 4s ease-in-out infinite;
+}
+
+/* Premium sophisticated brand background with visible cyan accents */
+@keyframes premium-gradient-shift {
+  0%, 100% {
+    background: 
+      radial-gradient(ellipse at 0% 100%, rgba(0, 194, 255, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(0, 194, 255, 0.06) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(0, 194, 255, 0.04) 0%, transparent 30%, rgba(0, 194, 255, 0.02) 100%);
+    background-size: 150% 150%, 150% 150%, 100% 100%;
+    background-position: 0% 0%, 100% 100%, 0% 0%;
+  }
+  50% {
+    background: 
+      radial-gradient(ellipse at 0% 100%, rgba(0, 194, 255, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(0, 194, 255, 0.10) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(0, 194, 255, 0.06) 0%, transparent 30%, rgba(0, 194, 255, 0.04) 100%);
+    background-size: 160% 160%, 160% 160%, 100% 100%;
+    background-position: 30% 30%, 70% 70%, 0% 0%;
+  }
+}
+
+@keyframes elegant-light-rays {
+  0%, 100% {
+    background: 
+      linear-gradient(45deg, transparent 0%, rgba(0, 194, 255, 0.04) 48%, rgba(0, 194, 255, 0.08) 50%, rgba(0, 194, 255, 0.04) 52%, transparent 100%),
+      linear-gradient(-45deg, transparent 0%, rgba(0, 194, 255, 0.03) 48%, rgba(0, 194, 255, 0.06) 50%, rgba(0, 194, 255, 0.03) 52%, transparent 100%);
+    opacity: 0.4;
+    transform: translateY(0px);
+  }
+  50% {
+    background: 
+      linear-gradient(45deg, transparent 0%, rgba(0, 194, 255, 0.06) 48%, rgba(0, 194, 255, 0.12) 50%, rgba(0, 194, 255, 0.06) 52%, transparent 100%),
+      linear-gradient(-45deg, transparent 0%, rgba(0, 194, 255, 0.05) 48%, rgba(0, 194, 255, 0.10) 50%, rgba(0, 194, 255, 0.05) 52%, transparent 100%);
+    opacity: 0.7;
+    transform: translateY(-2px);
+  }
+}
+
+.brand-premium-gradient {
+  animation: premium-gradient-shift 20s ease-in-out infinite;
+}
+
+.brand-light-rays {
+  animation: elegant-light-rays 15s ease-in-out infinite;
+}
+
+/* Clean, premium styling - all flashy effects removed */

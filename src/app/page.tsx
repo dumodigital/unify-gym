@@ -4,6 +4,7 @@ import Hero from '@/components/home/Hero';
 import Brand from '@/components/home/Brand';
 import Tiles from '@/components/home/Tiles';
 import Team from '@/components/home/Team';
+import GoogleReviews from '@/components/home/GoogleReviews';
 import Services from '@/components/home/Services';
 import VideoBanner from '@/components/home/VideoBanner';
 import Schedule from '@/components/home/Schedule';
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Brand />
         <Tiles />
         <Team />
+        <GoogleReviews />
         <Services />
         <VideoBanner />
         <Schedule />

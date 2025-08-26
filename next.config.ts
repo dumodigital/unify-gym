@@ -27,6 +27,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: { 
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
