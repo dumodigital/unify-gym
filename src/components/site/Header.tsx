@@ -36,19 +36,19 @@ export default function Header() {
         scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-6">
         <Link href="/" className="flex items-center">
           <Image
             src="/content/home/Unify-Fitness.png"
             alt="Unify Fitness"
             width={250}
             height={75}
-            className="h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
+            className="h-12 md:h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
             style={{filter: 'brightness(0) invert(1)'}}
           />
         </Link>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8 uppercase tracking-wide2 text-sm">
             {nav.slice(0, 2).map((n) => (
@@ -111,7 +111,7 @@ export default function Header() {
             href="https://calendly.com/unifygym"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white border border-white/20 px-4 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all duration-200 rounded-full"
+            className="text-white border border-white/20 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium hover:border-primary hover:text-primary transition-all duration-200 rounded-full"
           >
             Join Today
           </Link>
