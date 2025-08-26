@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="overflow-hidden">
             <SplitText
               text="UNIFY FITNESS"
-              className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg whitespace-nowrap"
+              className="font-display text-4xl sm:text-5xl md:text-8xl lg:text-9xl tracking-wide2 text-white font-bold drop-shadow-lg whitespace-nowrap"
               splitType="chars"
               delay={80}
               duration={0.8}
