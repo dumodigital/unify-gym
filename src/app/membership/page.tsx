@@ -220,26 +220,32 @@ function Timeline() {
 function FAQItem({ item }: { item: typeof FAQ_ITEMS[0] }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="border-2 border-primary/80 bg-neutral-800/50 overflow-hidden">
+    <div className="border-2 border-primary/80 bg-neutral-800/50 rounded-lg overflow-hidden">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-primary/5 transition-colors touch-manipulation"
+        onClick={handleToggle}
+        className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-primary/5 active:bg-primary/10 transition-colors duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-primary/50"
         aria-expanded={isOpen}
         aria-controls={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
+        type="button"
       >
-        <span className="text-white font-medium italic text-base sm:text-lg pr-4">{item.question}</span>
-        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="text-white font-medium italic text-base sm:text-lg pr-4 flex-1">{item.question}</span>
+        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
       </button>
       <div 
         id={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
-        className={`transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden`}
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
+        }`}
+        style={{
+          maxHeight: isOpen ? '500px' : '0px'
+        }}
       >
-        <div className={`px-4 sm:px-6 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed transition-opacity duration-300 ${
-          isOpen ? 'opacity-100' : 'opacity-0'
-        }`}>
+        <div className="px-4 sm:px-6 pt-2 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed">
           {item.answer}
         </div>
       </div>
@@ -283,7 +289,7 @@ export default function MembershipPage() {
   return (
     <>
       <Header />
-      <main className="bg-[#0B0B0C] text-white min-h-screen">
+      <main className="bg-[#0B0B0C] text-white min-h-screen overflow-x-hidden">
         {/* Hero Section */}
       <Section className="relative min-h-[50vh] md:min-h-[55vh] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -301,9 +307,9 @@ export default function MembershipPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-16"
+          className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 pt-16"
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">JOIN TODAY</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold mb-6">JOIN TODAY</h1>
           <p className="text-2xl md:text-3xl text-white/90 mb-8">Private & Exclusive</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -327,7 +333,7 @@ export default function MembershipPage() {
 
       {/* Why Unify Section */}
       <Section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold mb-8 overflow-hidden">
@@ -418,7 +424,7 @@ export default function MembershipPage() {
 
       {/* Packages Section */}
       <Section className="py-20 bg-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Monthly Training Packages</h2>
             <p className="text-xl text-white/70 mb-8">
@@ -447,7 +453,7 @@ export default function MembershipPage() {
 
       {/* Timeline Section */}
       <Section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Your Journey With Us</h2>
             <p className="text-xl text-white/70">
@@ -460,10 +466,10 @@ export default function MembershipPage() {
 
       {/* FAQ + CTA Section */}
       <Section className="py-20 bg-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="mb-16">
             <p className="text-primary/80 italic text-lg mb-4">All You Need To Know</p>
-            <h2 className="text-4xl md:text-6xl font-bold italic mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold italic mb-12">
               FREQUENTLY ASKED<br />
               QUESTIONS
             </h2>
