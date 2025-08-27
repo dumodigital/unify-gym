@@ -7,7 +7,7 @@ import Team from '@/components/home/Team';
 import GoogleReviews from '@/components/home/GoogleReviews';
 import Services from '@/components/home/Services';
 
-import Schedule from '@/components/home/Schedule';
+
 import Map from '@/components/home/Map';
 import Contact from '@/components/home/Contact';
 
@@ -22,7 +22,6 @@ export default function HomePage() {
         <Team />
         <GoogleReviews />
         <Services />
-        <Schedule />
         <Map />
         <Contact />
       </main>
