@@ -6,7 +6,7 @@ import Tiles from '@/components/home/Tiles';
 import Team from '@/components/home/Team';
 import GoogleReviews from '@/components/home/GoogleReviews';
 import Services from '@/components/home/Services';
-import VideoBanner from '@/components/home/VideoBanner';
+
 import Schedule from '@/components/home/Schedule';
 import Map from '@/components/home/Map';
 import Contact from '@/components/home/Contact';
@@ -22,7 +22,6 @@ export default function HomePage() {
         <Team />
         <GoogleReviews />
         <Services />
-        <VideoBanner />
         <Schedule />
         <Map />
         <Contact />
