@@ -220,35 +220,49 @@ function Timeline() {
 function FAQItem({ item }: { item: typeof FAQ_ITEMS[0] }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+  const handleToggle = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('FAQ clicked:', item.question); // Debug log
+    setIsOpen(prev => !prev);
   };
 
   return (
-    <div className="border-2 border-primary/80 bg-neutral-800/50 rounded-lg overflow-hidden">
-      <button
+    <div className="border-2 border-primary/80 bg-neutral-800/50 rounded-lg overflow-hidden mb-4">
+      <div
         onClick={handleToggle}
-        className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-primary/5 active:bg-primary/10 transition-colors duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-primary/50"
+        onTouchEnd={handleToggle}
+        className="w-full px-4 sm:px-6 py-6 sm:py-8 text-left flex items-center justify-between cursor-pointer select-none bg-transparent border-0 outline-0"
+        style={{ 
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation',
+          userSelect: 'none',
+          WebkitUserSelect: 'none'
+        }}
+        role="button"
+        tabIndex={0}
         aria-expanded={isOpen}
-        aria-controls={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
-        type="button"
-      >
-        <span className="text-white font-medium italic text-base sm:text-lg pr-4 flex-1">{item.question}</span>
-        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
-      </button>
-      <div 
-        id={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
-        className={`transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
-        }`}
-        style={{
-          maxHeight: isOpen ? '500px' : '0px'
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleToggle(e as any);
+          }
         }}
       >
-        <div className="px-4 sm:px-6 pt-2 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed">
+        <span className="text-white font-medium italic text-base sm:text-lg pr-4 flex-1 pointer-events-none">
+          {item.question}
+        </span>
+        <ChevronDown 
+          className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 pointer-events-none ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`} 
+        />
+      </div>
+      {isOpen && (
+        <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed border-t border-primary/20">
           {item.answer}
         </div>
-      </div>
+      )}
     </div>
   );
 }
