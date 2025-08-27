@@ -5,15 +5,15 @@ const services = [
     title: 'PERSONAL TRAINING', 
     img: '/content/home/team.jpg',
     status: 'active',
-    link: '/trainers',
-    buttonText: 'Meet Our Trainers'
+    link: '/services/personal-training',
+    buttonText: 'Learn More'
   },
   { 
     title: 'BOXING / MARTIAL ARTS', 
     img: '/content/home/boxing.jpg',
-    status: 'coming-soon',
+    status: 'active',
     link: '/services/boxing',
-    buttonText: 'Coming Soon'
+    buttonText: 'Book Training'
   },
   { 
     title: 'CHIROPRACTIC', 
@@ -26,8 +26,8 @@ const services = [
     title: 'PILATES', 
     img: '/content/home/pilates.jpg',
     status: 'active',
-    link: '/membership',
-    buttonText: 'View Membership'
+    link: '/services/pilates',
+    buttonText: 'Learn More'
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Services() {
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl tracking-wide2 mb-4">OUR SERVICES</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover our comprehensive range of fitness and wellness services designed to help you reach your goals
+          Expert fitness services in Glencoe, IL: Personal training, boxing classes, Pilates instruction, and chiropractic care to transform your health and wellness
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

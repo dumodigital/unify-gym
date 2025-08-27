@@ -92,9 +92,9 @@ export default function Brand() {
         {/* Copy with fade-in from left */}
         <p className={`text-xl text-white leading-relaxed max-w-2xl mx-auto mb-10 scroll-fade-left ${shouldAnimate ? 'animate' : ''}`}
            style={{ transitionDelay: '1.2s' }}>
-          Our philosophy unifies the 3 major aspects of health &amp; fitness – Mind, Body &amp; Spirit.
-          We offer options for all skill levels, creating personal experiences for beginners building a
-          foundation and advanced trainees forging a powerful physique.
+          Glencoe's premier boutique fitness center unifying Mind, Body &amp; Spirit through expert coaching.
+          Our certified personal trainers create customized experiences for every fitness level – from beginners 
+          building their foundation to advanced athletes achieving peak performance.
         </p>
 
         {/* CTAs with staggered fade-in */}

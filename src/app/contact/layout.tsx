@@ -1,9 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Unify Fitness',
-  description: 'Get in touch with Unify Fitness. Send us your questions, inquiries, or learn about joining our boutique training facility in Glencoe, Illinois.',
-  keywords: 'contact, unify fitness, glencoe gym, personal training, fitness inquiries',
+  title: 'Contact Us - Get Started at Unify Fitness',
+  description: 'Contact Unify Fitness in Glencoe, IL. Call (224) 522-9040 or visit us at 662 Vernon Avenue. Start your fitness journey with our expert team today.',
+  keywords: 'contact Unify Fitness, gym Glencoe IL phone number, 662 Vernon Avenue, fitness consultation, join gym Glencoe',
+  openGraph: {
+    title: 'Contact Us - Get Started at Unify Fitness',
+    description: 'Contact Unify Fitness in Glencoe, IL. Call (224) 522-9040 or visit us at 662 Vernon Avenue. Start your fitness journey with our expert team today.',
+    images: [{
+      url: "/content/home/optimized/Unify-Fitness.webp",
+      width: 1200,
+      height: 630,
+      alt: "Contact Unify Fitness - Premium Boutique Gym in Glencoe"
+    }]
+  }
 };
 
 export default function ContactLayout({

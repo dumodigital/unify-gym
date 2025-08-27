@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { Clock, Target, Heart, Users, Dumbbell, ChevronRight, Star, Shield, Award, Zap } from 'lucide-react';
+import { Clock, Target, Heart, Users, User, ChevronRight, Star, Zap, Award, TrendingUp, Brain, Shield } from 'lucide-react';
 import { useRef } from 'react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
@@ -76,19 +76,8 @@ function Button({
   );
 }
 
-// Active service indicator
-function ActiveBadge() {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="w-3 h-3 bg-primary rounded-full"></div>
-      <span className="text-primary font-medium uppercase tracking-wide2 text-sm">Now Available</span>
-      <div className="w-3 h-3 bg-primary rounded-full"></div>
-    </div>
-  );
-}
-
-// Features preview component
-function FeaturePreview({ icon: Icon, title, description, delay = 0 }: { 
+// Service feature component
+function ServiceFeature({ icon: Icon, title, description, delay = 0 }: { 
   icon: React.ComponentType<{ className?: string }>; 
   title: string; 
   description: string; 
@@ -118,15 +107,15 @@ function FeaturePreview({ icon: Icon, title, description, delay = 0 }: {
   );
 }
 
-export default function BoxingPage() {
+export default function PersonalTrainingPage() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true });
 
-  const boxingServiceData = {
+  const personalTrainingServiceData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Boxing Training",
-    "description": "Elite boxing training programs combining traditional techniques with modern conditioning methods at Unify Fitness in Glencoe, IL.",
+    "name": "Personal Training",
+    "description": "One-on-one personal training with certified fitness coaches at Unify Fitness in Glencoe, IL. Customized workouts, nutrition guidance, and accountability.",
     "provider": {
       "@type": "HealthAndBeautyBusiness",
       "name": "Unify Fitness",
@@ -139,21 +128,21 @@ export default function BoxingPage() {
       },
       "telephone": "+12245229040"
     },
-    "serviceType": "Boxing Training",
+    "serviceType": "Personal Fitness Training",
     "audience": {
       "@type": "Audience",
-      "audienceType": "fitness enthusiasts, athletes, beginners"
+      "audienceType": "weight loss, muscle building, athletic performance, functional fitness"
     },
     "offers": {
       "@type": "Offer",
-      "description": "Professional boxing training sessions",
+      "description": "Personalized fitness coaching, nutrition guidance, progress tracking",
       "availability": "https://schema.org/InStock"
     }
   };
 
   return (
     <>
-      <StructuredData data={boxingServiceData} />
+      <StructuredData data={personalTrainingServiceData} />
       <Header />
       <main className="bg-[#0B0B0C] text-white">
         {/* Hero Section */}
@@ -166,8 +155,8 @@ export default function BoxingPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/content/home/optimized/boxing.webp"
-              alt="Boxing training at Unify Fitness"
+              src="/content/home/optimized/trainer1.webp"
+              alt="Personal training at Unify Fitness"
               fill
               className="object-cover brightness-40"
               style={{ filter: 'brightness(0.4)' }}
@@ -182,21 +171,22 @@ export default function BoxingPage() {
               className="flex items-center justify-center gap-3 mb-6"
               variants={fadeInUp}
             >
-              <ActiveBadge />
+              <Award className="w-6 h-6 text-primary" />
+              <span className="text-primary font-medium uppercase tracking-wide2 text-sm">Certified Experts</span>
             </motion.div>
             
             <motion.h1 
-              className="text-6xl md:text-8xl font-display font-bold tracking-wide mb-6"
+              className="text-5xl md:text-7xl font-display font-bold tracking-wide mb-6"
               variants={fadeInUp}
             >
-              BOXING
+              PERSONAL TRAINING
             </motion.h1>
             
             <motion.p 
               className="text-2xl md:text-3xl text-white/90 mb-8 font-light"
               variants={fadeInUp}
             >
-              Power • Precision • Performance
+              Your Goals • Your Timeline • Your Success
             </motion.p>
             
             <motion.div
@@ -210,22 +200,22 @@ export default function BoxingPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                <Target className="w-4 h-4" />
-                Book Training
+                <User className="w-4 h-4" />
+                Book Consultation
               </Button>
               <Button 
                 variant="outline" 
-                href="/contact"
+                href="/trainers"
                 className="flex items-center gap-2"
               >
-                Learn More
+                Meet Our Trainers
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </motion.div>
           </div>
         </motion.section>
 
-        {/* About Boxing Section */}
+        {/* About Personal Training Section */}
         <motion.section 
           className="py-20 px-4 md:px-8 lg:px-12"
           initial="hidden"
@@ -239,43 +229,42 @@ export default function BoxingPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <p className="text-primary font-medium uppercase tracking-wide2 text-sm">Elite Training</p>
+                    <p className="text-primary font-medium uppercase tracking-wide2 text-sm">Personalized Approach</p>
                   </div>
                   <h2 className="text-4xl md:text-6xl font-display font-bold">
-                    EXPLOSIVE 
-                    <span className="text-primary"> BOXING </span>
-                    WORKOUTS
+                    YOUR 
+                    <span className="text-primary"> DEDICATED </span>
+                    COACH
                   </h2>
                 </div>
                 
                 <p className="text-neutral-300 text-lg leading-relaxed max-w-prose">
-                  Our elite boxing program combines traditional boxing techniques with modern training 
-                  methods in Unify Fitness's signature style. Experience high-intensity workouts that 
-                  build explosive power, cardiovascular endurance, and unshakeable confidence while 
-                  learning proper boxing fundamentals.
+                  Experience the power of one-on-one training with Unify Fitness's certified personal trainers. 
+                  Our expert coaches create customized workout programs, provide nutrition guidance, and offer 
+                  the accountability you need to achieve your specific fitness goals faster and more safely.
                 </p>
                 
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-white font-bold mb-3 flex items-center gap-2">
                     <Target className="w-5 h-5 text-primary" />
-                    Training Includes
+                    What's Included
                   </h3>
                   <ul className="space-y-2 text-neutral-300">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Fundamental boxing techniques & footwork
+                      Comprehensive fitness assessment
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Heavy bag, speed bag & pad work
+                      Customized workout programming
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      High-intensity conditioning circuits
+                      Nutrition guidance and meal planning
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Small group classes & private sessions
+                      Progress tracking and adjustments
                     </li>
                   </ul>
                 </div>
@@ -287,11 +276,11 @@ export default function BoxingPage() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Main boxing image */}
+                  {/* Main training image */}
                   <div className="relative h-96 md:h-[500px]">
                     <Image
-                      src="/content/home/boxing.jpg"
-                      alt="Boxing equipment and training setup"
+                      src="/content/home/trainer.jpg"
+                      alt="Personal training session at Unify Fitness"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -301,16 +290,16 @@ export default function BoxingPage() {
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-primary text-sm font-medium uppercase tracking-wide">Now Available</span>
+                        <span className="text-primary text-sm font-medium uppercase tracking-wide">1-on-1 Training</span>
                       </div>
                       <h3 className="text-white text-xl font-bold">
-                        Elite Boxing Training
+                        Personalized Fitness Coaching
                       </h3>
                     </div>
                   </div>
                 </motion.div>
                 
-                {/* Floating preview element */}
+                {/* Floating stats element */}
                 <motion.div
                   className="absolute -top-6 -right-6 bg-primary/90 backdrop-blur rounded-2xl p-4 text-center shadow-xl border border-primary/30"
                   initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
@@ -320,21 +309,21 @@ export default function BoxingPage() {
                   whileHover={{ scale: 1.05, rotate: 2 }}
                 >
                   <Image
-                    src="/content/home/svc-boxing.svg"
-                    alt="Boxing icon"
+                    src="/content/home/svc-training.svg"
+                    alt="Training icon"
                     width={32}
                     height={32}
                     className="mx-auto mb-2 brightness-0 invert"
                   />
-                  <p className="text-white text-sm font-bold">Boxing</p>
-                  <p className="text-white/80 text-xs">Available Now</p>
+                  <p className="text-white text-sm font-bold">Personal</p>
+                  <p className="text-white/80 text-xs">Training</p>
                 </motion.div>
               </motion.div>
             </div>
           </div>
         </motion.section>
 
-        {/* Features Preview Section */}
+        {/* Training Specialties Section */}
         <motion.section 
           className="py-20 px-4 md:px-8 lg:px-12 bg-white/[0.02]"
           initial="hidden"
@@ -348,38 +337,101 @@ export default function BoxingPage() {
               variants={fadeInUp}
             >
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                ELITE BOXING TRAINING
+                TRAINING SPECIALTIES
               </h2>
               <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-                Our boxing program integrates seamlessly with Unify Fitness's holistic approach to strength, 
-                conditioning, and wellness for complete athletic development
+                Our certified trainers specialize in diverse fitness disciplines to help you 
+                achieve any goal, from weight loss to athletic performance
               </p>
             </motion.div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <FeaturePreview
-                icon={Target}
-                title="Technical Mastery"
-                description="Master proper boxing fundamentals, footwork, and combinations with expert instruction"
+              <ServiceFeature
+                icon={TrendingUp}
+                title="Weight Loss"
+                description="Sustainable fat loss through strategic training and nutrition programming"
                 delay={0.1}
               />
-              <FeaturePreview
-                icon={Heart}
-                title="Power Conditioning"
-                description="Build explosive power and cardiovascular endurance through high-intensity training"
+              <ServiceFeature
+                icon={Zap}
+                title="Strength Building"
+                description="Progressive overload programs to build muscle and increase power"
                 delay={0.2}
               />
-              <FeaturePreview
-                icon={Users}
-                title="Small Group Classes"
-                description="Train in intimate group settings with personalized attention and motivation"
+              <ServiceFeature
+                icon={Heart}
+                title="Functional Fitness"
+                description="Movement patterns that improve daily life and prevent injury"
                 delay={0.3}
               />
-              <FeaturePreview
-                icon={Shield}
-                title="Safe & Progressive"
-                description="Learn proper form and safety protocols while progressing at your own pace"
+              <ServiceFeature
+                icon={Star}
+                title="Athletic Performance"
+                description="Sport-specific training to enhance competitive performance"
                 delay={0.4}
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Why Choose Personal Training Section */}
+        <motion.section 
+          className="py-20 px-4 md:px-8 lg:px-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerChildren}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                WHY PERSONAL TRAINING?
+              </h2>
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+                Discover the advantages of working with a dedicated fitness professional 
+                who's committed to your success
+              </p>
+            </motion.div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ServiceFeature
+                icon={Target}
+                title="Faster Results"
+                description="Achieve your goals 3x faster with expert programming and accountability"
+                delay={0.1}
+              />
+              <ServiceFeature
+                icon={Shield}
+                title="Injury Prevention"
+                description="Learn proper form and technique to train safely and avoid setbacks"
+                delay={0.2}
+              />
+              <ServiceFeature
+                icon={Brain}
+                title="Expert Knowledge"
+                description="Benefit from years of education and experience in exercise science"
+                delay={0.3}
+              />
+              <ServiceFeature
+                icon={Users}
+                title="Motivation & Support"
+                description="Stay consistent with a coach who believes in your potential"
+                delay={0.4}
+              />
+              <ServiceFeature
+                icon={Clock}
+                title="Time Efficiency"
+                description="Maximize every minute with focused, purposeful workout sessions"
+                delay={0.5}
+              />
+              <ServiceFeature
+                icon={Award}
+                title="Customized Programs"
+                description="Training designed specifically for your body, goals, and lifestyle"
+                delay={0.6}
               />
             </div>
           </div>
@@ -403,16 +455,16 @@ export default function BoxingPage() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Target className="w-4 h-4 text-primary" />
-                <span className="text-primary font-medium text-sm uppercase tracking-wide">Ready to Train</span>
+                <User className="w-4 h-4 text-primary" />
+                <span className="text-primary font-medium text-sm uppercase tracking-wide">Start Today</span>
               </motion.div>
               
               <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Ready to Unleash Your Power?
+                Ready to Transform Your Life?
               </h3>
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
-                Book your first boxing session today and experience the ultimate combination of 
-                technique, conditioning, and confidence building. Limited class sizes ensure personal attention.
+                Book your complimentary consultation today and discover how personal training 
+                can accelerate your fitness journey. Your transformation starts with a single step.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -423,21 +475,21 @@ export default function BoxingPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  <Target className="w-4 h-4" />
-                  Book Your Session
+                  <User className="w-4 h-4" />
+                  Free Consultation
                 </Button>
                 <Button 
                   variant="outline" 
-                  href="/membership"
+                  href="/trainers"
                   className="flex items-center gap-2"
                 >
-                  View Membership Options
+                  Meet Our Team
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </div>
               
               <p className="text-neutral-400 text-sm mt-6">
-                Members receive priority booking and discounted rates on all boxing sessions
+                Complimentary fitness assessment included with your first session
               </p>
             </motion.div>
           </div>
@@ -447,4 +499,3 @@ export default function BoxingPage() {
     </>
   );
 }
-

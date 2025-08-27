@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react';
 
 const phrases = [
-  "Unifying our community by enhancing the Mind & Body.",
-  "Unifying strength and conditioning for all levels.",
-  "Unifying personal training with cutting-edge equipment.", 
-  "Unifying boxing, pilates, and chiropractic care.",
-  "Unifying beginners and advanced athletes together.",
-  "Unifying mind, body, and spirit through fitness."
+  "Premier boutique gym in Glencoe, Illinois.",
+  "Expert personal training for all fitness levels.",
+  "Professional boxing classes & strength conditioning.", 
+  "Certified Pilates instruction & chiropractic care.",
+  "North Shore's most trusted fitness community.",
+  "Transform your body at Unify Fitness Glencoe."
 ];
 
 export default function TypewriterText() {

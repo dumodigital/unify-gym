@@ -8,8 +8,6 @@ import Image from 'next/image';
 const staff = [
   { name: 'MELISSA CESARE', role: 'Owner / Coach', img: '/content/home/mel.jpg' },
   { name: 'LESLIE GARRETT', role: 'Owner / Coach', img: '/content/home/LESLIE GARRETT.jpg' },
-  { name: 'DUMO DIGITAL', role: 'Boxing & Conditioning', img: '/content/home/trainer.jpg' },
-  { name: 'DUMO DIGITAL', role: 'Trainer', img: '/content/home/trainer1.jpg' },
   { name: 'NIKATA KATSMAN', role: 'Strength & Conditioning', img: '/content/home/NIKATA KATSMAN.jpg' },
   { name: 'MARY BETH', role: 'Pilates Coach', img: '/content/home/mary.jpeg' },
   { name: 'JAMES HERRON', role: 'Performance Specialist', img: '/content/home/JAMES HERRON.jpg' },

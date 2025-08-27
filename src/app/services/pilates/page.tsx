@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { Clock, Target, Heart, Users, Dumbbell, ChevronRight, Star, Shield, Award, Zap } from 'lucide-react';
+import { Clock, Target, Heart, Users, FlowerIcon as Lotus, ChevronRight, Star, Zap, Award, Activity } from 'lucide-react';
 import { useRef } from 'react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
@@ -76,19 +76,8 @@ function Button({
   );
 }
 
-// Active service indicator
-function ActiveBadge() {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="w-3 h-3 bg-primary rounded-full"></div>
-      <span className="text-primary font-medium uppercase tracking-wide2 text-sm">Now Available</span>
-      <div className="w-3 h-3 bg-primary rounded-full"></div>
-    </div>
-  );
-}
-
-// Features preview component
-function FeaturePreview({ icon: Icon, title, description, delay = 0 }: { 
+// Service feature component
+function ServiceFeature({ icon: Icon, title, description, delay = 0 }: { 
   icon: React.ComponentType<{ className?: string }>; 
   title: string; 
   description: string; 
@@ -118,15 +107,15 @@ function FeaturePreview({ icon: Icon, title, description, delay = 0 }: {
   );
 }
 
-export default function BoxingPage() {
+export default function PilatesPage() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true });
 
-  const boxingServiceData = {
+  const pilatesServiceData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Boxing Training",
-    "description": "Elite boxing training programs combining traditional techniques with modern conditioning methods at Unify Fitness in Glencoe, IL.",
+    "name": "Pilates Classes",
+    "description": "Expert-led Pilates classes focusing on core strength, flexibility, and mind-body connection at Unify Fitness in Glencoe, IL.",
     "provider": {
       "@type": "HealthAndBeautyBusiness",
       "name": "Unify Fitness",
@@ -139,21 +128,21 @@ export default function BoxingPage() {
       },
       "telephone": "+12245229040"
     },
-    "serviceType": "Boxing Training",
+    "serviceType": "Pilates Training",
     "audience": {
       "@type": "Audience",
-      "audienceType": "fitness enthusiasts, athletes, beginners"
+      "audienceType": "all fitness levels, rehabilitation, flexibility improvement"
     },
     "offers": {
       "@type": "Offer",
-      "description": "Professional boxing training sessions",
+      "description": "Mat Pilates, Beginner Classes, Advanced Training, Therapeutic Sessions",
       "availability": "https://schema.org/InStock"
     }
   };
 
   return (
     <>
-      <StructuredData data={boxingServiceData} />
+      <StructuredData data={pilatesServiceData} />
       <Header />
       <main className="bg-[#0B0B0C] text-white">
         {/* Hero Section */}
@@ -166,8 +155,8 @@ export default function BoxingPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/content/home/optimized/boxing.webp"
-              alt="Boxing training at Unify Fitness"
+              src="/content/home/optimized/pilates.webp"
+              alt="Pilates training at Unify Fitness"
               fill
               className="object-cover brightness-40"
               style={{ filter: 'brightness(0.4)' }}
@@ -182,21 +171,22 @@ export default function BoxingPage() {
               className="flex items-center justify-center gap-3 mb-6"
               variants={fadeInUp}
             >
-              <ActiveBadge />
+              <Star className="w-6 h-6 text-primary" />
+              <span className="text-primary font-medium uppercase tracking-wide2 text-sm">Expert Instruction</span>
             </motion.div>
             
             <motion.h1 
               className="text-6xl md:text-8xl font-display font-bold tracking-wide mb-6"
               variants={fadeInUp}
             >
-              BOXING
+              PILATES
             </motion.h1>
             
             <motion.p 
               className="text-2xl md:text-3xl text-white/90 mb-8 font-light"
               variants={fadeInUp}
             >
-              Power • Precision • Performance
+              Strength • Grace • Balance
             </motion.p>
             
             <motion.div
@@ -210,22 +200,22 @@ export default function BoxingPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                <Target className="w-4 h-4" />
-                Book Training
+                <Lotus className="w-4 h-4" />
+                Book Class
               </Button>
               <Button 
                 variant="outline" 
-                href="/contact"
+                href="/membership"
                 className="flex items-center gap-2"
               >
-                Learn More
+                View Membership
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </motion.div>
           </div>
         </motion.section>
 
-        {/* About Boxing Section */}
+        {/* About Pilates Section */}
         <motion.section 
           className="py-20 px-4 md:px-8 lg:px-12"
           initial="hidden"
@@ -239,43 +229,42 @@ export default function BoxingPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <p className="text-primary font-medium uppercase tracking-wide2 text-sm">Elite Training</p>
+                    <p className="text-primary font-medium uppercase tracking-wide2 text-sm">Mind-Body Connection</p>
                   </div>
                   <h2 className="text-4xl md:text-6xl font-display font-bold">
-                    EXPLOSIVE 
-                    <span className="text-primary"> BOXING </span>
-                    WORKOUTS
+                    TRANSFORM 
+                    <span className="text-primary"> YOUR </span>
+                    BODY
                   </h2>
                 </div>
                 
                 <p className="text-neutral-300 text-lg leading-relaxed max-w-prose">
-                  Our elite boxing program combines traditional boxing techniques with modern training 
-                  methods in Unify Fitness's signature style. Experience high-intensity workouts that 
-                  build explosive power, cardiovascular endurance, and unshakeable confidence while 
-                  learning proper boxing fundamentals.
+                  Experience the transformative power of Pilates at Unify Fitness. Our expert-led classes 
+                  focus on building core strength, improving flexibility, and enhancing overall body 
+                  awareness through precise, controlled movements that connect mind and body.
                 </p>
                 
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-white font-bold mb-3 flex items-center gap-2">
-                    <Target className="w-5 h-5 text-primary" />
-                    Training Includes
+                    <Heart className="w-5 h-5 text-primary" />
+                    What You'll Gain
                   </h3>
                   <ul className="space-y-2 text-neutral-300">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Fundamental boxing techniques & footwork
+                      Improved core strength and stability
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Heavy bag, speed bag & pad work
+                      Enhanced flexibility and mobility
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      High-intensity conditioning circuits
+                      Better posture and body alignment
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      Small group classes & private sessions
+                      Reduced stress and improved focus
                     </li>
                   </ul>
                 </div>
@@ -287,11 +276,11 @@ export default function BoxingPage() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Main boxing image */}
+                  {/* Main pilates image */}
                   <div className="relative h-96 md:h-[500px]">
                     <Image
-                      src="/content/home/boxing.jpg"
-                      alt="Boxing equipment and training setup"
+                      src="/content/home/pilates.jpg"
+                      alt="Pilates class at Unify Fitness"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -301,16 +290,16 @@ export default function BoxingPage() {
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-primary text-sm font-medium uppercase tracking-wide">Now Available</span>
+                        <span className="text-primary text-sm font-medium uppercase tracking-wide">Expert Instruction</span>
                       </div>
                       <h3 className="text-white text-xl font-bold">
-                        Elite Boxing Training
+                        Professional Pilates Training
                       </h3>
                     </div>
                   </div>
                 </motion.div>
                 
-                {/* Floating preview element */}
+                {/* Floating info element */}
                 <motion.div
                   className="absolute -top-6 -right-6 bg-primary/90 backdrop-blur rounded-2xl p-4 text-center shadow-xl border border-primary/30"
                   initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
@@ -320,21 +309,21 @@ export default function BoxingPage() {
                   whileHover={{ scale: 1.05, rotate: 2 }}
                 >
                   <Image
-                    src="/content/home/svc-boxing.svg"
-                    alt="Boxing icon"
+                    src="/content/home/svc-pilates.svg"
+                    alt="Pilates icon"
                     width={32}
                     height={32}
                     className="mx-auto mb-2 brightness-0 invert"
                   />
-                  <p className="text-white text-sm font-bold">Boxing</p>
-                  <p className="text-white/80 text-xs">Available Now</p>
+                  <p className="text-white text-sm font-bold">Pilates</p>
+                  <p className="text-white/80 text-xs">Classes Available</p>
                 </motion.div>
               </motion.div>
             </div>
           </div>
         </motion.section>
 
-        {/* Features Preview Section */}
+        {/* Class Types Section */}
         <motion.section 
           className="py-20 px-4 md:px-8 lg:px-12 bg-white/[0.02]"
           initial="hidden"
@@ -348,38 +337,101 @@ export default function BoxingPage() {
               variants={fadeInUp}
             >
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                ELITE BOXING TRAINING
+                PILATES PROGRAMS
               </h2>
               <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-                Our boxing program integrates seamlessly with Unify Fitness's holistic approach to strength, 
-                conditioning, and wellness for complete athletic development
+                Choose from our range of Pilates offerings designed to meet every fitness level 
+                and goal, from beginner fundamentals to advanced conditioning
               </p>
             </motion.div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <FeaturePreview
-                icon={Target}
-                title="Technical Mastery"
-                description="Master proper boxing fundamentals, footwork, and combinations with expert instruction"
+              <ServiceFeature
+                icon={Lotus}
+                title="Mat Pilates"
+                description="Traditional floor-based exercises focusing on core strength and body control"
                 delay={0.1}
               />
-              <FeaturePreview
-                icon={Heart}
-                title="Power Conditioning"
-                description="Build explosive power and cardiovascular endurance through high-intensity training"
+              <ServiceFeature
+                icon={Activity}
+                title="Beginner Classes"
+                description="Perfect introduction to Pilates fundamentals with step-by-step instruction"
                 delay={0.2}
               />
-              <FeaturePreview
-                icon={Users}
-                title="Small Group Classes"
-                description="Train in intimate group settings with personalized attention and motivation"
+              <ServiceFeature
+                icon={Zap}
+                title="Advanced Training"
+                description="Challenging sequences for experienced practitioners seeking progression"
                 delay={0.3}
               />
-              <FeaturePreview
-                icon={Shield}
-                title="Safe & Progressive"
-                description="Learn proper form and safety protocols while progressing at your own pace"
+              <ServiceFeature
+                icon={Heart}
+                title="Therapeutic Focus"
+                description="Gentle, restorative sessions for injury prevention and rehabilitation"
                 delay={0.4}
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Benefits Section */}
+        <motion.section 
+          className="py-20 px-4 md:px-8 lg:px-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerChildren}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                PROVEN BENEFITS
+              </h2>
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+                Discover why Pilates is trusted by athletes, healthcare professionals, 
+                and fitness enthusiasts worldwide
+              </p>
+            </motion.div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ServiceFeature
+                icon={Target}
+                title="Core Strength"
+                description="Build deep abdominal strength and spinal stability for better movement patterns"
+                delay={0.1}
+              />
+              <ServiceFeature
+                icon={Users}
+                title="Flexibility"
+                description="Improve range of motion and muscle elasticity through controlled stretching"
+                delay={0.2}
+              />
+              <ServiceFeature
+                icon={Award}
+                title="Posture"
+                description="Correct imbalances and develop awareness for better daily posture"
+                delay={0.3}
+              />
+              <ServiceFeature
+                icon={Heart}
+                title="Mind-Body"
+                description="Enhance focus, reduce stress, and improve mental clarity through movement"
+                delay={0.4}
+              />
+              <ServiceFeature
+                icon={Star}
+                title="Injury Prevention"
+                description="Strengthen stabilizing muscles to reduce risk of common injuries"
+                delay={0.5}
+              />
+              <ServiceFeature
+                icon={Clock}
+                title="Better Sleep"
+                description="Regular practice promotes relaxation and improved sleep quality"
+                delay={0.6}
               />
             </div>
           </div>
@@ -403,16 +455,16 @@ export default function BoxingPage() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Target className="w-4 h-4 text-primary" />
-                <span className="text-primary font-medium text-sm uppercase tracking-wide">Ready to Train</span>
+                <Lotus className="w-4 h-4 text-primary" />
+                <span className="text-primary font-medium text-sm uppercase tracking-wide">Transform Today</span>
               </motion.div>
               
               <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Ready to Unleash Your Power?
+                Ready to Transform Your Body?
               </h3>
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
-                Book your first boxing session today and experience the ultimate combination of 
-                technique, conditioning, and confidence building. Limited class sizes ensure personal attention.
+                Join our Pilates classes and experience the perfect combination of strength, 
+                flexibility, and mindfulness. All levels welcome.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -423,8 +475,8 @@ export default function BoxingPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  <Target className="w-4 h-4" />
-                  Book Your Session
+                  <Lotus className="w-4 h-4" />
+                  Book Your Class
                 </Button>
                 <Button 
                   variant="outline" 
@@ -437,7 +489,7 @@ export default function BoxingPage() {
               </div>
               
               <p className="text-neutral-400 text-sm mt-6">
-                Members receive priority booking and discounted rates on all boxing sessions
+                First-time visitors receive a complimentary consultation with our certified instructors
               </p>
             </motion.div>
           </div>
@@ -447,4 +499,3 @@ export default function BoxingPage() {
     </>
   );
 }
-
