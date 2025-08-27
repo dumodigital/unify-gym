@@ -224,17 +224,22 @@ function FAQItem({ item }: { item: typeof FAQ_ITEMS[0] }) {
     <div className="border-2 border-primary/80 bg-neutral-800/50 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-primary/5 transition-colors"
+        className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-primary/5 transition-colors touch-manipulation"
+        aria-expanded={isOpen}
+        aria-controls={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
       >
-        <span className="text-white font-medium italic text-lg">{item.question}</span>
-        <ChevronDown className={`w-5 h-5 text-primary transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="text-white font-medium italic text-base sm:text-lg pr-4">{item.question}</span>
+        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <div 
-        className={`overflow-hidden transition-all duration-200 ease-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        id={`faq-content-${item.question.replace(/\s+/g, '-').toLowerCase()}`}
+        className={`transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden`}
       >
-        <div className="px-6 pb-6 text-white/90 italic">
+        <div className={`px-4 sm:px-6 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0'
+        }`}>
           {item.answer}
         </div>
       </div>
