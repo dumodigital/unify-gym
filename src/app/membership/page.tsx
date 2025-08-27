@@ -220,49 +220,42 @@ function Timeline() {
 function FAQItem({ item }: { item: typeof FAQ_ITEMS[0] }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log('FAQ clicked:', item.question); // Debug log
-    setIsOpen(prev => !prev);
-  };
-
   return (
     <div className="border-2 border-primary/80 bg-neutral-800/50 rounded-lg overflow-hidden mb-4">
-      <div
-        onClick={handleToggle}
-        onTouchEnd={handleToggle}
-        className="w-full px-4 sm:px-6 py-6 sm:py-8 text-left flex items-center justify-between cursor-pointer select-none bg-transparent border-0 outline-0"
-        style={{ 
-          WebkitTapHighlightColor: 'transparent',
-          touchAction: 'manipulation',
-          userSelect: 'none',
-          WebkitUserSelect: 'none'
-        }}
-        role="button"
-        tabIndex={0}
-        aria-expanded={isOpen}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleToggle(e as any);
-          }
-        }}
-      >
-        <span className="text-white font-medium italic text-base sm:text-lg pr-4 flex-1 pointer-events-none">
-          {item.question}
-        </span>
-        <ChevronDown 
-          className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 pointer-events-none ${
-            isOpen ? 'rotate-180' : 'rotate-0'
-          }`} 
-        />
+      {/* Desktop accordion behavior */}
+      <div className="hidden md:block">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full px-6 py-8 text-left flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors"
+          aria-expanded={isOpen}
+        >
+          <span className="text-white font-medium italic text-lg pr-4 flex-1">
+            {item.question}
+          </span>
+          <ChevronDown 
+            className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`} 
+          />
+        </button>
+        {isOpen && (
+          <div className="px-6 pb-6 text-white/90 italic text-base leading-relaxed border-t border-primary/20">
+            {item.answer}
+          </div>
+        )}
       </div>
-      {isOpen && (
-        <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-white/90 italic text-sm sm:text-base leading-relaxed border-t border-primary/20">
-          {item.answer}
+
+      {/* Mobile always-expanded view */}
+      <div className="block md:hidden">
+        <div className="px-4 py-6">
+          <h3 className="text-white font-medium italic text-base mb-3">
+            {item.question}
+          </h3>
+          <p className="text-white/90 italic text-sm leading-relaxed">
+            {item.answer}
+          </p>
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -402,17 +395,49 @@ export default function MembershipPage() {
             </div>
 
             <div className="relative">
-              <div className="relative">
+              {/* Mobile: Stack photos vertically */}
+              <div className="block md:hidden space-y-6">
                 <motion.div
-                  initial={{ x: 50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1.0, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <Image
                     src="/content/home/lift.jpg"
                     alt="Training at Unify Fitness"
                     width={400}
-                    height={500}
+                    height={300}
+                    className="rounded-2xl shadow-2xl w-full h-auto"
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 1.3, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <Image
+                    src="/content/home/gym2.jpg"
+                    alt="Unify Fitness facility"
+                    width={400}
+                    height={300}
+                    className="rounded-2xl shadow-2xl w-full h-auto"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Desktop: Overlapping layout with better positioning */}
+              <div className="hidden md:block relative">
+                <motion.div
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 1.0, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="relative z-10"
+                >
+                  <Image
+                    src="/content/home/lift.jpg"
+                    alt="Training at Unify Fitness"
+                    width={380}
+                    height={480}
                     className="rounded-2xl shadow-2xl"
                   />
                 </motion.div>
@@ -420,13 +445,13 @@ export default function MembershipPage() {
                   initial={{ x: 80, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 1.5, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="absolute -bottom-12 -right-12"
+                  className="absolute -bottom-8 -right-8 z-20"
                 >
                   <Image
                     src="/content/home/gym2.jpg"
                     alt="Unify Fitness facility"
-                    width={300}
-                    height={400}
+                    width={240}
+                    height={320}
                     className="rounded-2xl shadow-2xl"
                   />
                 </motion.div>
