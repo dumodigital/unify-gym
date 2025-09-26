@@ -59,10 +59,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-medium text-white hover:text-primary transition-colors duration-200 cursor-default">Services</h3>
             <div className="space-y-3 text-sm text-neutral-400">
-              <div className="block hover:text-white hover:translate-x-1 transition-all duration-200 cursor-default">Personal Training</div>
-              <div className="block hover:text-white hover:translate-x-1 transition-all duration-200 cursor-default">Boxing</div>
-              <div className="block hover:text-white hover:translate-x-1 transition-all duration-200 cursor-default">Pilates</div>
-              <div className="block hover:text-white hover:translate-x-1 transition-all duration-200 cursor-default">Chiropractic</div>
+              <Link href="/services/personal-training" className="block hover:text-white hover:translate-x-1 transition-all duration-200">Personal Training</Link>
+              <Link href="/services/boxing" className="block hover:text-white hover:translate-x-1 transition-all duration-200">Boxing</Link>
+              <Link href="/services/pilates" className="block hover:text-white hover:translate-x-1 transition-all duration-200">Pilates</Link>
+              <Link href="/services/chiropractic" className="block hover:text-white hover:translate-x-1 transition-all duration-200">Chiropractic</Link>
             </div>
           </div>
 

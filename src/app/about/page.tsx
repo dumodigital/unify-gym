@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, LazyMotion, domAnimation, m } from 'framer-motion';
 import { Users, Target, Heart, TrendingUp, Clock, Calendar } from 'lucide-react';
 import { useRef, useState } from 'react';
 import Header from '@/components/site/Header';
@@ -211,7 +211,7 @@ export default function AboutPage() {
               <motion.div variants={slideFromLeft} className="space-y-8">
                 <h2 className="text-4xl md:text-5xl font-display font-bold">HOW IT ALL STARTED</h2>
                 <p className="text-neutral-300 text-lg leading-relaxed max-w-prose">
-                  Having been in the health & fitness industry for <AnimatedCounter target={10} suffix="+" /> years, we wanted to create a different 
+                  Having been in the health & fitness industry for <AnimatedCounter target={25} suffix="+" /> years, we wanted to create a different 
                   atmosphere and experience. Our mission is to unify the 3 major aspects of health & fitness to 
                   maximize our clients potential.
                 </p>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 
                 {/* Enhanced Pills */}
                 <div className="flex flex-wrap gap-3">
-                  <StatPill icon={Clock} value="10+" label="Years Coaching" delay={0.1} />
+                  <StatPill icon={Clock} value="25+" label="Years Coaching" delay={0.1} />
                   <StatPill icon={Users} value="1" label="Community" delay={0.2} />
                   <StatPill icon={Target} value="3" label="Pillars" delay={0.3} />
                 </div>
@@ -442,7 +442,7 @@ export default function AboutPage() {
                         {[
                           "Founded with a vision to unite fitness",
                           "Expanded our coaching expertise", 
-                          "Became Glencoe's premier boutique gym",
+                          "Became Glencoe's premier gym",
                           "Continuing to innovate and inspire"
                         ][(hoveredMilestone ?? selectedMilestone)!]}
                       </motion.p>
@@ -538,7 +538,7 @@ export default function AboutPage() {
                   },
                   { 
                     year: "2022", 
-                    milestone: "Became Glencoe's premier boutique gym", 
+                    milestone: "Became Glencoe's premier gym", 
                     icon: Target,
                     image: "/content/home/facility.jpg",
                     imageAlt: "Our premium facility"

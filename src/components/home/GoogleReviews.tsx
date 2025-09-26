@@ -284,7 +284,7 @@ export default function GoogleReviews() {
         <div className="text-center mt-6 lg:mt-8">
           <p className="text-slate-600 mb-6 font-medium text-lg">Ready to start your transformation?</p>
           <a
-            href="https://calendly.com/unifyfitness"
+            href="https://calendly.com/unifygym"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:from-slate-700 hover:to-slate-800 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border border-slate-700"

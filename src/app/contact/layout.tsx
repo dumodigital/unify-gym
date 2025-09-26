@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       url: "/content/home/optimized/Unify-Fitness.webp",
       width: 1200,
       height: 630,
-      alt: "Contact Unify Fitness - Premium Boutique Gym in Glencoe"
+      alt: "Contact Unify Fitness - Premium Gym in Glencoe"
     }]
   }
 };

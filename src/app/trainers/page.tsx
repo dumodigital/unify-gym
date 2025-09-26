@@ -151,26 +151,6 @@ const TRAINERS: Trainer[] = [
     credentials: ['NASM-CPT', 'CSCS', 'FMS Level 2', 'Women\'s Fitness Specialist'],
     socials: { instagram: 'https://instagram.com/unifygym' },
     calendly: 'https://calendly.com/unifygym/sasha'
-  },
-  {
-    id: '14',
-    name: 'Dumo Digital',
-    slug: 'dumo-digital',
-    headshot: '/content/home/placeholder.svg',
-    specialties: ['CrossFit', 'HIIT', 'Performance'],
-    bio: 'Ryan brings explosive energy and competitive spirit to every workout. With a background in collegiate athletics and CrossFit competition, he specializes in high-intensity training that builds both physical and mental toughness. His motivational coaching style pushes clients to discover their true potential while maintaining proper form and safety.',
-    credentials: ['CrossFit Level 2', 'NASM-CPT', 'Olympic Lifting Certified', 'Sports Psychology Certified'],
-    socials: { instagram: 'https://instagram.com/unifygym' }
-  },
-  {
-    id: '15',
-    name: 'Dumo Digital',
-    slug: 'dumo-digital-2',
-    headshot: '/content/home/placeholder.svg',
-    specialties: ['Nutrition', 'Weight Training', 'Core Training'],
-    bio: 'Sarah is a holistic fitness professional who believes in the power of combining proper nutrition with effective training. Her comprehensive approach addresses both physical fitness and nutritional wellness to help clients achieve sustainable, long-term results. Sarah\'s warm, supportive coaching style makes even the most challenging workouts feel achievable.',
-    credentials: ['Registered Dietitian', 'NASM-CPT', 'Precision Nutrition Level 2', 'Corrective Exercise Specialist'],
-    socials: { instagram: 'https://instagram.com/unifygym' }
   }
 ];
 

@@ -36,15 +36,18 @@ export default function Header() {
         scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-4 py-4 sm:py-5 md:py-6">
         <Link href="/" className="flex items-center">
           <Image
             src="/content/home/Unify-Fitness.png"
             alt="Unify Fitness"
             width={250}
             height={75}
-            className="h-12 md:h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
+            className="h-14 sm:h-16 md:h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
             style={{filter: 'brightness(0) invert(1)'}}
+            priority
+            quality={75}
+            sizes="(max-width: 768px) 224px, 320px"
           />
         </Link>
         
@@ -53,7 +56,7 @@ export default function Header() {
           <ul className="hidden md:flex items-center gap-8 uppercase tracking-wide2 text-sm">
             {nav.slice(0, 2).map((n) => (
               <li key={n.href}>
-                <Link className="hover:text-primary transition-colors" href={n.href}>{n.label}</Link>
+                <Link className="hover:text-primary transition-colors" href={n.href} prefetch>{n.label}</Link>
               </li>
             ))}
             
@@ -82,6 +85,7 @@ export default function Header() {
                   <Link
                     href="/membership"
                     className="block px-4 py-3 text-sm text-white hover:text-primary hover:bg-neutral-800/50 transition-all duration-150 normal-case tracking-normal border-b border-neutral-800/50"
+                    prefetch
                   >
                     Membership Plans
                   </Link>
@@ -91,6 +95,7 @@ export default function Header() {
                       key={service.href}
                       href={service.href}
                       className="block px-4 py-3 text-sm text-neutral-300 hover:text-primary hover:bg-neutral-800/50 transition-all duration-150 normal-case tracking-normal"
+                      prefetch
                     >
                       {service.label}
                     </Link>
@@ -101,7 +106,7 @@ export default function Header() {
             
             {nav.slice(3).map((n) => (
               <li key={n.href}>
-                <Link className="hover:text-primary transition-colors" href={n.href}>{n.label}</Link>
+                <Link className="hover:text-primary transition-colors" href={n.href} prefetch>{n.label}</Link>
               </li>
             ))}
           </ul>
@@ -111,14 +116,14 @@ export default function Header() {
             href="https://calendly.com/unifygym"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white border border-white/20 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium hover:border-primary hover:text-primary transition-all duration-200 rounded-full"
+            className="text-white border border-white/20 px-3 sm:px-4 py-1.5 sm:py-2 md:px-5 md:py-2.5 text-xs sm:text-sm font-medium hover:border-primary hover:text-primary transition-all duration-200 rounded-full"
           >
             Join Today
           </Link>
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden relative flex flex-col justify-center items-center w-8 h-8 rounded-sm border border-white/10 hover:border-primary/30 transition-all duration-300 hover:bg-white/5 group"
+            className="md:hidden relative flex flex-col justify-center items-center w-9 sm:w-10 h-9 sm:h-10 rounded-sm border border-white/10 hover:border-primary/30 transition-all duration-300 hover:bg-white/5 group"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -151,6 +156,7 @@ export default function Header() {
                   className="group block py-4 px-6 text-white hover:text-primary transition-all duration-300 uppercase tracking-[0.15em] text-sm font-light border-b border-neutral-800/50 hover:border-primary/30 hover:bg-gradient-to-r hover:from-primary/5 hover:to-transparent rounded-sm" 
                   href={n.href}
                   onClick={() => setMobileMenuOpen(false)}
+                  prefetch
                 >
                   <span className="relative">
                     {n.label}
@@ -241,7 +247,7 @@ export default function Header() {
           <div className="relative px-8 pb-8 pt-4 border-t border-neutral-800/30">
             <div className="text-center">
               <p className="text-neutral-400 text-xs uppercase tracking-[0.2em] font-light mb-4">
-                Boutique Training Facility
+                Training Facility
               </p>
               <div className="flex justify-center">
                 <div className="w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>

@@ -9,8 +9,8 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
 const PRICES = {
-  weekly: { gold: 89, platinum: 169, pro: 239 },
-  monthly: { gold: 349, platinum: 649, pro: 899 },
+  weekly: { gold: 120, platinum: 225, pro: 375 },
+  monthly: { gold: 480, platinum: 900, pro: 1500 },
 };
 
 const PACKAGES = [
@@ -18,7 +18,7 @@ const PACKAGES = [
     id: 'gold',
     name: 'Gold Package',
     features: [
-      '1 Personal Training session weekly',
+      '4 Personal Training sessions monthly',
       'Gym membership included',
       'Zoom! Workouts available',
       'Wellness check with Lakefront Chiropractic'
@@ -28,7 +28,7 @@ const PACKAGES = [
     id: 'platinum',
     name: 'Platinum Package',
     features: [
-      '2 Personal training sessions weekly',
+      '8 Personal training sessions monthly',
       'Gym membership included',
       'Zoom! Workout available',
       'Wellness check with Lakefront Chiropractic'
@@ -39,7 +39,7 @@ const PACKAGES = [
     id: 'pro',
     name: 'Pro Package',
     features: [
-      '3 Personal training sessions weekly',
+      '12 Personal training sessions monthly',
       'Gym membership included',
       'Zoom! Workout available',
       'Wellness check with Lakefront Chiropractic'
@@ -85,7 +85,7 @@ const FAQ_ITEMS = [
   },
   {
     question: 'Can I Come Into The Gym Whenever I Want?',
-    answer: 'Yes, you will be given a FOB Key that you can use to come and go in our private, members only gym.'
+    answer: 'Yes, you will be given a FOB Key that you can use to come and go in our private, members only gym on a limited basis and upon client request during designated hours.'
   }
 ];
 

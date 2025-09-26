@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function VideoBanner() {
   const [open, setOpen] = useState(false);
   // TODO: Replace with compressed video under 10MB
-  const videoSrc = "/content/home/Unify Fitness Gym – A boutique training facility located in Glencoe, Illinois. and 7 more pages - Personal - Microsoft_ Edge 2025-08-23 00-10-07.mp4";
+  const videoSrc = "/content/home/Unify Fitness Gym – A training facility located in Glencoe, Illinois. and 7 more pages - Personal - Microsoft_ Edge 2025-08-23 00-10-07.mp4";
   return (
     <>
       <section className="relative mx-auto max-w-7xl px-4 py-10">

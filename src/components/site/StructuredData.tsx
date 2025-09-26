@@ -12,7 +12,7 @@ export default function StructuredData({ type = 'organization', data }: Structur
     "@id": "https://unifygym.com/#organization",
     "name": "Unify Fitness",
     "alternateName": "Unify Gym",
-    "description": "Premium boutique fitness center in Glencoe, Illinois offering personal training, boxing, pilates, and chiropractic services.",
+    "description": "Premium fitness center in Glencoe, Illinois offering personal training, boxing, pilates, and chiropractic services.",
     "url": "https://unifygym.com",
     "logo": "https://unifygym.com/content/home/brand.svg",
     "image": [
@@ -138,7 +138,7 @@ export default function StructuredData({ type = 'organization', data }: Structur
     "@id": "https://unifygym.com/#website",
     "url": "https://unifygym.com",
     "name": "Unify Fitness",
-    "description": "Premium boutique fitness center in Glencoe, Illinois",
+    "description": "Premium fitness center in Glencoe, Illinois",
     "publisher": {
       "@id": "https://unifygym.com/#organization"
     },

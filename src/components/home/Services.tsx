@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   { 
@@ -43,7 +44,14 @@ export default function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((s) => (
         <div key={s.title} className="relative h-64 overflow-hidden group">
-          <img src={s.img} alt={s.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <Image 
+            src={s.img} 
+            alt={s.title} 
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105" 
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
           <div className="absolute inset-0 bg-overlay-40" />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">

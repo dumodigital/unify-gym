@@ -2,9 +2,8 @@
 import { useEffect, useState } from 'react';
 
 const phrases = [
-  "Premier boutique gym in Glencoe, Illinois.",
+  "Premier gym in Glencoe, Illinois.",
   "Expert personal training for all fitness levels.",
-  "Professional boxing classes & strength conditioning.", 
   "Certified Pilates instruction & chiropractic care.",
   "North Shore's most trusted fitness community.",
   "Transform your body at Unify Fitness Glencoe."

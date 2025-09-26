@@ -344,7 +344,7 @@ export default function ContactPage() {
             <div className="max-w-7xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">VISIT OUR FACILITY</h2>
               <p className="text-neutral-300 text-lg leading-relaxed max-w-3xl mx-auto">
-                Located in the heart of Glencoe, our boutique training facility offers a premium 
+                Located in the heart of Glencoe, our training facility offers a premium 
                 fitness experience in a welcoming, community-focused environment.
               </p>
             </div>
