@@ -53,7 +53,7 @@ function Button({
   rel?: string;
   onClick?: () => void;
 }) {
-  const baseClasses = "inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md";
+  const baseClasses = "inline-flex items-center justify-center px-6 py-4 sm:py-3 text-base sm:text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md min-h-[44px] min-w-[120px]";
   
   const variants = {
     primary: `${baseClasses} bg-primary hover:bg-primary/90 text-white`,

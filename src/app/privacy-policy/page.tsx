@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
                     <strong className="text-white">Unify Fitness</strong><br />
                     664 Vernon Avenue<br />
                     Glencoe, IL 60022<br />
-                    Email: <a href="mailto:info@unifyfitness.com" className="text-primary hover:text-primary/80 transition-colors">info@unifyfitness.com</a>
+                    Email: <a href="mailto:info@unifygym.com" className="text-primary hover:text-primary/80 transition-colors">info@unifygym.com</a>
                   </p>
                 </div>
               </section>

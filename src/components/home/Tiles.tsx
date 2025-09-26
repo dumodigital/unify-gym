@@ -28,7 +28,7 @@ export default function Tiles() {
   return (
     <section className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 px-4 py-16">
       <Tile title="WHO WE ARE" href="/about" image="/content/home/hello.jpg" />
-      <Tile title="OUR FACILITY" href="/facility" image="/content/home/facility.jpg" />
+      <Tile title="OUR FACILITY" href="/about" image="/content/home/facility.jpg" />
       <Tile title="MEMBERSHIP" href="/membership" image="/content/home/jump.jpg" />
     </section>
   );

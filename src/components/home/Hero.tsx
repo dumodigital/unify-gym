@@ -19,8 +19,8 @@ export default function Hero() {
       />
       {/* Subtle overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-0 grid place-items-center px-4">
-        <div className="text-center space-y-8 max-w-5xl">
+      <div className="absolute inset-0 grid place-items-center px-4 pt-20 sm:pt-24 md:pt-28">
+        <div className="text-center space-y-6 sm:space-y-8 max-w-5xl">
           {/* Animated Heading with SplitText */}
           <div className="overflow-hidden">
             <SplitText
@@ -44,18 +44,18 @@ export default function Hero() {
           </div>
           
           {/* Buttons with delayed entrance */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 buttons-delayed">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8 buttons-delayed">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-4 sm:py-3 text-base sm:text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg min-h-[48px] min-w-[140px]"
             >
               Join Today
             </a>
             <Link 
-              href="/facility"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg"
+              href="/about"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-6 py-4 sm:py-3 text-base sm:text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 rounded-lg min-h-[48px] min-w-[140px]"
             >
               Explore the Gym
             </Link>

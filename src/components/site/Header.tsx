@@ -247,7 +247,7 @@ export default function Header() {
           <div className="relative px-8 pb-8 pt-4 border-t border-neutral-800/30">
             <div className="text-center">
               <p className="text-neutral-400 text-xs uppercase tracking-[0.2em] font-light mb-4">
-                Training Facility
+                Unify Fitness
               </p>
               <div className="flex justify-center">
                 <div className="w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>

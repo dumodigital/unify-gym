@@ -1,60 +1,13 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import DarkVeil from '@/components/ui/DarkVeil';
 
 export default function Brand() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-    
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Add 800ms delay before starting animations
-          setTimeout(() => {
-            setShouldAnimate(true);
-          }, 800);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isMounted]);
-
-  const renderStaggeredText = (text: string) => {
-    return text.split('').map((char, index) => (
-      <span
-        key={index}
-        className={`${shouldAnimate ? 'stagger-letter' : 'opacity-0'}`}
-        style={{ 
-          animationDelay: shouldAnimate ? `${index * 0.08 + 0.1}s` : '0s',
-          animationPlayState: shouldAnimate ? 'running' : 'paused'
-        }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ));
-  };
+  const [isMounted, setIsMounted] = useState(true);
 
   return (
     <section 
-      ref={sectionRef}
       className="-mt-10 relative z-10 bg-black text-neutral-50 overflow-hidden min-h-[500px]"
     >
       {/* Premium sophisticated background */}
@@ -82,22 +35,21 @@ export default function Brand() {
       </div>
       
       <div className="relative z-10 mx-auto max-w-3xl px-6 py-20 text-center">
-        {/* Staggered heading animation */}
-        <div className="relative mb-6" style={{ perspective: '1000px' }}>
+        {/* Heading without animation */}
+        <div className="relative mb-6">
           <h2 className="relative z-10 font-display text-5xl md:text-6xl lg:text-7xl tracking-wide2">
-            {renderStaggeredText('UNIFY FITNESS')}
+            UNIFY FITNESS
           </h2>
         </div>
 
-        {/* Copy with fade-in from left */}
-        <p className={`text-xl text-white leading-relaxed max-w-2xl mx-auto mb-10 scroll-fade-left ${shouldAnimate ? 'animate' : ''}`}
-           style={{ transitionDelay: '1.2s' }}>
+        {/* Copy without animation */}
+        <p className="text-xl text-white leading-relaxed max-w-2xl mx-auto mb-10">
           Glencoe's premier fitness center unifying Mind, Body &amp; Spirit through expert coaching.
           Our certified personal trainers create customized experiences for every fitness level – from beginners 
           building their foundation to advanced athletes achieving peak performance.
         </p>
 
-        {/* CTAs with staggered fade-in */}
+        {/* CTAs without animation delays */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/trainers"

@@ -28,32 +28,40 @@ function Button({
   rel?: string;
   onClick?: () => void;
 }) {
-  const baseClasses = "inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md";
+  const baseClasses = "inline-flex items-center justify-center px-6 py-4 sm:py-3 text-base sm:text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md min-h-[44px] min-w-[120px]";
   
   const variants = {
     primary: `${baseClasses} bg-primary hover:bg-primary/90 text-white`,
     outline: `${baseClasses} border-2 border-white/80 text-white hover:bg-white hover:text-black`
   };
 
-  const Component = href ? Link : 'button';
+  if (href) {
+    return (
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        className={`${variants[variant]} ${className}`}
+      >
+        {children}
+      </Link>
+    );
+  }
   
   return (
-    <Component
+    <button
       className={`${variants[variant]} ${className}`}
-      href={href}
-      target={target}
-      rel={rel}
       onClick={onClick}
     >
       {children}
-    </Component>
+    </button>
   );
 }
 
 // Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
 const staggerChildren = {
@@ -63,17 +71,17 @@ const staggerChildren = {
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
 };
 
 const slideFromLeft = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
 };
 
 const slideFromRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
 };
 
 const timelineVariants = {
@@ -82,7 +90,6 @@ const timelineVariants = {
     scaleX: 1, 
     transition: { 
       duration: 2, 
-      ease: "easeInOut",
       delay: 0.5
     } 
   }
@@ -96,8 +103,7 @@ const milestoneVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      delay: 0.8 + index * 0.15,
-      ease: "easeOut"
+      delay: 0.8 + index * 0.15
     }
   })
 };
@@ -171,7 +177,7 @@ export default function AboutPage() {
       <main className="bg-[#0B0B0C] text-white">
         {/* Hero Section */}
         <motion.section 
-          className="relative min-h-[36vh] md:min-h-[44vh] flex items-center justify-center overflow-hidden"
+          className="relative min-h-[36vh] md:min-h-[44vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28"
           initial="hidden"
           animate="visible"
           variants={scaleIn}
@@ -188,9 +194,9 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C]/80 via-transparent to-[#0B0B0C]/40" />
           </div>
           
-          <div className="relative z-10 text-center">
+          <div className="relative z-10 text-center px-4">
             <motion.h1 
-              className="text-5xl md:text-7xl font-display font-bold tracking-wide"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-bold tracking-wide leading-tight"
               variants={fadeInUp}
             >
               ABOUT US
@@ -200,7 +206,7 @@ export default function AboutPage() {
 
         {/* How It Started Section */}
         <motion.section 
-          className="py-14 md:py-20 lg:py-24 px-4 md:px-8 lg:px-12"
+          className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}

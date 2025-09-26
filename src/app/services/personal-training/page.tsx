@@ -54,7 +54,7 @@ function Button({
   rel?: string;
   onClick?: () => void;
 }) {
-  const baseClasses = "inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md";
+  const baseClasses = "inline-flex items-center justify-center px-6 py-4 sm:py-3 text-base sm:text-sm font-medium uppercase tracking-wide2 transition-all duration-300 rounded-md min-h-[44px] min-w-[120px]";
   
   const variants = {
     primary: `${baseClasses} bg-primary hover:bg-primary/90 text-white`,
@@ -148,15 +148,15 @@ export default function PersonalTrainingPage() {
         {/* Hero Section */}
         <motion.section 
           ref={heroRef}
-          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden"
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28"
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
           variants={scaleIn}
         >
           <div className="absolute inset-0">
             <Image
-              src="/content/home/optimized/trainer1.webp"
-              alt="Personal training at Unify Fitness"
+              src="/content/home/optimized/facility.webp"
+              alt="Personal training at Unify Fitness facility"
               fill
               className="object-cover brightness-40"
               style={{ filter: 'brightness(0.4)' }}
@@ -166,31 +166,31 @@ export default function PersonalTrainingPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0C]/80 via-transparent to-[#0B0B0C]/40" />
           </div>
           
-          <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6">
             <motion.div 
-              className="flex items-center justify-center gap-3 mb-6"
+              className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6"
               variants={fadeInUp}
             >
-              <Award className="w-6 h-6 text-primary" />
-              <span className="text-primary font-medium uppercase tracking-wide2 text-sm">Certified Experts</span>
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <span className="text-primary font-medium uppercase tracking-wide2 text-xs sm:text-sm">Certified Experts</span>
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-7xl font-display font-bold tracking-wide mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-bold tracking-wide mb-4 sm:mb-6 leading-tight"
               variants={fadeInUp}
             >
               PERSONAL TRAINING
             </motion.h1>
             
             <motion.p 
-              className="text-2xl md:text-3xl text-white/90 mb-8 font-light"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-6 sm:mb-8 font-light px-2"
               variants={fadeInUp}
             >
               Your Goals • Your Timeline • Your Success
             </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2"
               variants={fadeInUp}
             >
               <Button 
@@ -217,7 +217,7 @@ export default function PersonalTrainingPage() {
 
         {/* About Personal Training Section */}
         <motion.section 
-          className="py-20 px-4 md:px-8 lg:px-12"
+          className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -231,11 +231,11 @@ export default function PersonalTrainingPage() {
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                     <p className="text-primary font-medium uppercase tracking-wide2 text-sm">Personalized Approach</p>
                   </div>
-                  <h2 className="text-4xl md:text-6xl font-display font-bold">
-                    YOUR 
-                    <span className="text-primary"> DEDICATED </span>
-                    COACH
-                  </h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-display font-bold leading-tight">
+                YOUR 
+                <span className="text-primary"> DEDICATED </span>
+                COACH
+              </h2>
                 </div>
                 
                 <p className="text-neutral-300 text-lg leading-relaxed max-w-prose">
@@ -325,7 +325,7 @@ export default function PersonalTrainingPage() {
 
         {/* Training Specialties Section */}
         <motion.section 
-          className="py-20 px-4 md:px-8 lg:px-12 bg-white/[0.02]"
+          className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-white/[0.02]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -336,7 +336,7 @@ export default function PersonalTrainingPage() {
               className="text-center mb-16"
               variants={fadeInUp}
             >
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 leading-tight">
                 TRAINING SPECIALTIES
               </h2>
               <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
@@ -376,7 +376,7 @@ export default function PersonalTrainingPage() {
 
         {/* Why Choose Personal Training Section */}
         <motion.section 
-          className="py-20 px-4 md:px-8 lg:px-12"
+          className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -387,7 +387,7 @@ export default function PersonalTrainingPage() {
               className="text-center mb-16"
               variants={fadeInUp}
             >
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 leading-tight">
                 WHY PERSONAL TRAINING?
               </h2>
               <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
@@ -439,7 +439,7 @@ export default function PersonalTrainingPage() {
 
         {/* CTA Section */}
         <motion.section 
-          className="py-20 px-4 md:px-8 lg:px-12"
+          className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -447,11 +447,11 @@ export default function PersonalTrainingPage() {
         >
           <div className="max-w-4xl mx-auto">
             <motion.div 
-              className="text-center bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-12"
+              className="text-center bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6 sm:p-8 md:p-12"
               variants={fadeInUp}
             >
               <motion.div
-                className="inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full mb-6"
+                className="inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full mb-4 sm:mb-6"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
@@ -459,7 +459,7 @@ export default function PersonalTrainingPage() {
                 <span className="text-primary font-medium text-sm uppercase tracking-wide">Start Today</span>
               </motion.div>
               
-              <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 leading-tight">
                 Ready to Transform Your Life?
               </h3>
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">

@@ -50,7 +50,7 @@ export default function Footer() {
               <Link href="/about" className="block hover:text-white transition-colors">About Us</Link>
               <Link href="/membership" className="block hover:text-white transition-colors">Membership</Link>
               <Link href="/trainers" className="block hover:text-white transition-colors">Trainers</Link>
-              <Link href="/facility" className="block hover:text-white transition-colors">Our Facility</Link>
+              <Link href="/about" className="block hover:text-white transition-colors">Our Facility</Link>
               <Link href="/contact" className="block hover:text-white transition-colors">Contact Us</Link>
             </div>
           </div>
@@ -95,8 +95,8 @@ export default function Footer() {
               <a href="tel:+12245229040" className="block text-primary hover:text-white hover:translate-x-1 transition-all duration-200">
                 (224) 522-9040
               </a>
-              <a href="mailto:info@unifyfitness.com" className="block text-primary hover:text-white hover:translate-x-1 transition-all duration-200">
-                info@unifyfitness.com
+              <a href="mailto:info@unifygym.com" className="block text-primary hover:text-white hover:translate-x-1 transition-all duration-200">
+                info@unifygym.com
               </a>
             </div>
             
