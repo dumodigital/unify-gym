@@ -13,9 +13,9 @@ function Tile({ title, href, image }: { title: string; href: string; image: stri
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGBkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
       />
-      <div className="absolute inset-0 bg-overlay-40 transition group-hover:bg-overlay-60" />
-      <div className="absolute inset-0 grid place-items-center text-center">
-        <div>
+      <div className="absolute inset-0 bg-overlay-40 transition group-hover:bg-overlay-60 pointer-events-none" />
+      <div className="absolute inset-0 grid place-items-center text-center pointer-events-none">
+        <div className="pointer-events-auto">
           <h3 className="font-display text-2xl md:text-3xl tracking-wide2"> {title} </h3>
           <span className="mt-4 inline-flex btn-ghost">Learn more</span>
         </div>

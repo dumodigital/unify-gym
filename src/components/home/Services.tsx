@@ -52,16 +52,16 @@ export default function Services() {
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-overlay-40" />
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="text-center">
+          <div className="absolute inset-0 bg-overlay-40 pointer-events-none" />
+          <div className="absolute inset-0 grid place-items-center pointer-events-none">
+            <div className="text-center pointer-events-auto">
               <h3 className="font-display text-3xl tracking-wide2">{s.title}</h3>
               {s.status === 'coming-soon' ? (
                 <span className="mt-4 inline-flex btn-ghost">{s.buttonText}</span>
               ) : (
                 <Link 
                   href={s.link}
-                  className="mt-4 inline-flex btn-ghost hover:bg-white hover:text-neutral-900 transition-all duration-300"
+                  className="mt-4 inline-flex btn-ghost hover:bg-white hover:text-neutral-900 transition-all duration-300 touch-manipulation"
                 >
                   {s.buttonText}
                 </Link>

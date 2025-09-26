@@ -18,8 +18,8 @@ export default function Hero() {
         sizes="100vw"
       />
       {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-0 grid place-items-center px-4 pt-20 sm:pt-24 md:pt-28">
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 grid place-items-center px-4 pt-20 sm:pt-24 md:pt-28 pointer-events-none">
         <div className="text-center space-y-6 sm:space-y-8 max-w-5xl">
           {/* Animated Heading with SplitText */}
           <div className="overflow-hidden">
@@ -44,7 +44,7 @@ export default function Hero() {
           </div>
           
           {/* Buttons with delayed entrance */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8 buttons-delayed">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8 buttons-delayed pointer-events-auto">
             <a 
               href="https://calendly.com/unifygym"
               target="_blank" 

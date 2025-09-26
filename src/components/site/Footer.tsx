@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://calendly.com/unifygym"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-primary/90 transition-colors self-center md:self-start"
+              className="px-6 py-3 bg-primary text-white text-sm font-medium rounded hover:bg-primary/90 transition-colors self-center md:self-start touch-manipulation min-h-[44px] flex items-center justify-center"
             >
               Join Today
             </Link>
