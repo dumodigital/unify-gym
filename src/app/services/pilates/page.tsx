@@ -148,7 +148,7 @@ export default function PilatesPage() {
         {/* Hero Section */}
         <motion.section 
           ref={heroRef}
-          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden"
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28"
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
           variants={scaleIn}
