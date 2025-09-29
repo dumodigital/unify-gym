@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     description: 'Transform your health at Unify Fitness, a premium gym in Glencoe, IL. Expert personal training, boxing, pilates, and chiropractic services.',
     images: [
       {
-        url: '/content/home/optimized/Unify-Fitness.webp',
-        width: 1200,
-        height: 630,
+        url: '/unf.png',
+        width: 880,
+        height: 850,
         alt: 'Unify Fitness - Premium Gym in Glencoe, Illinois',
       }
     ],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Unify Fitness - Premium Gym in Glencoe, IL',
     description: 'Transform your health at Unify Fitness, a premium gym in Glencoe, IL. Expert personal training, boxing, pilates, and chiropractic services.',
-    images: ['/content/home/optimized/Unify-Fitness.webp'],
+    images: ['/unf.png'],
   },
   robots: {
     index: true,
@@ -69,6 +69,11 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'verification-token-here', // Replace with actual Google verification token
+  },
+  icons: {
+    icon: '/unf.png',
+    shortcut: '/unf.png',
+    apple: '/unf.png',
   },
 };
 

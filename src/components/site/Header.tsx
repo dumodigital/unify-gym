@@ -137,7 +137,7 @@ export default function Header() {
       
       {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-500 ease-out overflow-hidden ${
-        mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        mobileMenuOpen ? 'max-h-screen opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none'
       }`}>
         <div className="bg-gradient-to-b from-black/98 via-neutral-900/98 to-black/98 backdrop-blur-xl border-t border-neutral-700/50 shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
