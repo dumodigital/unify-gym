@@ -105,7 +105,7 @@ const TRAINERS: Trainer[] = [
     id: '9',
     name: 'Tex Dimoulas',
     slug: 'tex-dimoulas',
-    headshot: '/content/home/tex1.jpg',
+    headshot: '/content/home/texx.png',
     specialties: ['Strength & Conditioning', 'Powerlifting', 'Nutrition'],
     bio: 'Tex brings over a decade of experience in strength training and nutritional coaching to Unify Fitness. With a background in competitive powerlifting and bodybuilding, he understands the intricate relationship between proper nutrition and optimal performance. Tex specializes in helping clients build lean muscle mass while optimizing their dietary habits for sustainable results. His methodical approach to training combines heavy compound movements with strategic nutritional planning. Known for his direct communication style and results-driven programs, Tex has helped hundreds of clients transform their physiques and relationship with food. He believes that true strength comes from consistency in both the gym and the kitchen.',
     credentials: ['NASM-CPT', 'Precision Nutrition Level 2', 'USAPL Certified', 'Bodybuilding Coach'],
