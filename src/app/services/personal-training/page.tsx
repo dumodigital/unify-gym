@@ -279,7 +279,7 @@ export default function PersonalTrainingPage() {
                   {/* Main training image */}
                   <div className="relative h-96 md:h-[500px]">
                     <Image
-                      src="/content/home/trainer.jpg"
+                      src="/content/home/JAMES HERRON.jpg"
                       alt="Personal training session at Unify Fitness"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

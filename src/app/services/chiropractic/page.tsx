@@ -124,7 +124,7 @@ export default function ChiropracticPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/content/home/optimized/chiro.webp"
+              src="/content/home/joe.jpg"
               alt="Chiropractic care at Lakefront Chiropractic"
               fill
               className="object-cover brightness-40"
@@ -247,7 +247,7 @@ export default function ChiropracticPage() {
                 >
                   <div className="relative h-80 md:h-96">
                     <Image
-                      src="/content/home/dr.jpg"
+                      src="/content/home/joee.jpg"
                       alt="Dr. Joseph Ethen, D.C. - Lakefront Chiropractic"
                       fill
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -284,7 +284,7 @@ export default function ChiropracticPage() {
                 >
                   <div className="relative h-64">
                     <Image
-                      src="/content/home/chiro.jpg"
+                      src="/content/home/joetea.jpg"
                       alt="Lakefront Chiropractic clinic interior"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

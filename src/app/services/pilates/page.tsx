@@ -155,7 +155,7 @@ export default function PilatesPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/content/home/optimized/pilates.webp"
+              src="/content/home/pil.jpg"
               alt="Pilates training at Unify Fitness"
               fill
               className="object-cover brightness-40"
