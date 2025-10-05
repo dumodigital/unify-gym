@@ -279,7 +279,7 @@ export default function PilatesPage() {
                   {/* Main pilates image */}
                   <div className="relative h-96 md:h-[500px]">
                     <Image
-                      src="/content/home/pilates.jpg"
+                      src="/content/home/pill.jpg"
                       alt="Pilates class at Unify Fitness"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
