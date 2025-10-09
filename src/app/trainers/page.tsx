@@ -45,7 +45,7 @@ const TRAINERS: Trainer[] = [
     id: '3',
     name: 'Marybeth Burke',
     slug: 'marybeth-burke',
-    headshot: '/content/home/mary.jpeg',
+    headshot: '/content/home/maryb.jpg',
     specialties: ['Pilates', 'Core Training'],
     bio: 'With a decade of teaching Pilates, Marybeth has continuously developed her passion for health & fitness. Marybeth will lead you through an intense CORE class to push you past your limitations. She is a perfect combination of charisma and strength that will make you forget you are working out. Pilates help build core strength, flexibility and lean muscle tone with an emphasis on lengthening the body and aligning the spine.',
     credentials: ['PMA-CPT', 'Romana\'s Pilates Certified', 'Mat Pilates Instructor', 'Reformer Certified'],
@@ -65,7 +65,7 @@ const TRAINERS: Trainer[] = [
     id: '5',
     name: 'James Herron',
     slug: 'james-herron',
-    headshot: '/content/home/JAMES HERRON.jpg',
+    headshot: '/content/home/jamesh.jpg',
     specialties: ['Performance', 'Strength & Conditioning', 'Nutrition'],
     bio: 'As a former elite athlete in college football, wrestling and track, James has been helping athletes achieve their highest levels of performance using his extensive background in sports performance, neuroscience and sports nutrition. James focuses on mental, physical and emotional components to help clients achieve excellence not just in their physique, but also their lives. He believes in a balanced approach to training by not only bettering his clients along their fitness journey, but to also help them create an overall blueprint to living.',
     credentials: ['CSCS', 'Sports Performance Specialist', 'Neuroscience in Fitness', 'Precision Nutrition Certified'],
@@ -75,7 +75,7 @@ const TRAINERS: Trainer[] = [
     id: '6',
     name: 'Jeff Delgado',
     slug: 'jeff-delgado',
-    headshot: '/content/home/jeffbio.jpg',
+    headshot: '/content/home/jeffd.jpg',
     specialties: ['Boxing', 'Martial Arts', 'Strength Training'],
     bio: 'Jeff Delgado\'s focus and drive is to empower individuals so that they may better themselves through a healthier way of life. Individuality is very important to me when it comes to creating a program, whether it be through kettle bell training, martial arts, dynamic breathing and movement etc. For over 15 years I\'ve been training in traditional martial arts, boxing, kickboxing, unconventional strength training methods.',
     credentials: ['Traditional Martial Arts Certified', 'Boxing Certified', 'Kickboxing Instructor', 'Kettlebell Training Specialist'],
@@ -145,12 +145,42 @@ const TRAINERS: Trainer[] = [
     id: '13',
     name: 'Sasha Katsman',
     slug: 'sasha-katsman',
-    headshot: '/content/home/sasha.jpg',
+    headshot: '/content/home/sasha_new.jpg',
     specialties: ['Strength & Conditioning'],
     bio: 'Sasha combines technical expertise with genuine care for her clients\' success. With over 8 years of experience in strength training and conditioning, she specializes in creating programs that build both physical strength and mental resilience. Her patient, detail-oriented approach ensures proper form and safe progression, while her enthusiasm keeps clients motivated to reach their full potential.',
     credentials: ['NASM-CPT', 'CSCS', 'FMS Level 2', 'Women\'s Fitness Specialist'],
     socials: { instagram: 'https://instagram.com/unifygym' },
     calendly: 'https://calendly.com/unifygym/sasha'
+  },
+  {
+    id: '14',
+    name: 'David Cordova',
+    slug: 'david-cordova',
+    headshot: '/content/home/david.jpg',
+    specialties: ['Strength & Conditioning', 'Performance'],
+    bio: 'David brings passion and expertise to every training session. With a focus on strength and performance, he helps clients achieve their fitness goals through personalized training programs and unwavering support.',
+    credentials: ['NASM-CPT', 'Strength & Conditioning Specialist'],
+    socials: { instagram: 'https://instagram.com/unifygym' }
+  },
+  {
+    id: '15',
+    name: 'Meredith Schomer',
+    slug: 'meredith-schomer',
+    headshot: '/content/home/merry.jpg',
+    specialties: ['Strength & Conditioning', 'Performance'],
+    bio: 'Meredith is dedicated to helping clients reach their full potential through personalized training and expert guidance. With a passion for fitness and wellness, she creates effective programs that deliver real results.',
+    credentials: ['NASM-CPT', 'Performance Enhancement Specialist'],
+    socials: { instagram: 'https://instagram.com/unifygym' }
+  },
+  {
+    id: '16',
+    name: 'Brittany Geary',
+    slug: 'brittany-geary',
+    headshot: '/content/home/brit.jpg',
+    specialties: ['Strength & Conditioning', 'Performance'],
+    bio: 'Brittany brings energy and expertise to every training session. With a focus on strength and performance, she helps clients achieve their fitness goals through personalized training programs and motivational support.',
+    credentials: ['NASM-CPT', 'Strength & Conditioning Specialist'],
+    socials: { instagram: 'https://instagram.com/unifygym' }
   }
 ];
 

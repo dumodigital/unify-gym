@@ -18,14 +18,14 @@ const services = [
   },
   { 
     title: 'CHIROPRACTIC', 
-    img: '/content/home/chiro.jpg',
+    img: '/content/home/chiro1.jpg',
     status: 'active',
     link: '/services/chiropractic',
     buttonText: 'Learn More'
   },
   { 
     title: 'PILATES', 
-    img: '/content/home/pilates.jpg',
+    img: '/content/home/pill2.jpg',
     status: 'active',
     link: '/services/pilates',
     buttonText: 'Learn More'

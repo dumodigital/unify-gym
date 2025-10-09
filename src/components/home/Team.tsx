@@ -9,8 +9,8 @@ const staff = [
   { name: 'MELISSA CESARE', role: 'Owner / Coach', img: '/content/home/mel.jpg' },
   { name: 'LESLIE GARRETT', role: 'Owner / Coach', img: '/content/home/LESLIE GARRETT.jpg' },
   { name: 'NIKATA KATSMAN', role: 'Strength & Conditioning', img: '/content/home/NIKATA KATSMAN.jpg' },
-  { name: 'MARY BETH', role: 'Pilates Coach', img: '/content/home/mary.jpeg' },
-  { name: 'JAMES HERRON', role: 'Performance Specialist', img: '/content/home/JAMES HERRON.jpg' },
+  { name: 'MARY BETH', role: 'Pilates Coach', img: '/content/home/maryb.jpg' },
+  { name: 'JAMES HERRON', role: 'Performance Specialist', img: '/content/home/jamesh.jpg' },
 ];
 
 function Card({ s }: { s: (typeof staff)[number] }) {
