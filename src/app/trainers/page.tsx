@@ -83,9 +83,9 @@ const TRAINERS: Trainer[] = [
   },
   {
     id: '7',
-    name: 'Meredith D\'arcy',
-    slug: 'meredith-darcy',
-    headshot: '/content/home/mer.jpeg',
+    name: 'Meredith Schomer',
+    slug: 'meredith-schomer',
+    headshot: '/content/home/merry.jpg',
     specialties: ['Strength & Conditioning', 'Performance', 'Core Training'],
     bio: 'I am a NASM-certified personal trainer and a fitness professional with a passion for improving quality of life through healthy lifestyles. I am motivated to help my clients upgrade their movement quality to maximize performance, live pain-free, improve overall wellness, and increase longevity. I believe in seeking a healthier life by developing consistent long-term habits. I am an athlete through and through; I\'ve dedicated my life to several sports, including strength training, running, and competitive travel soccer for 14 years, and I was a CrossFit Athlete for 3.5 years. Educate. Inspire. Motivate. The medical & fitness industry is filled with misinformation and too much information. It can become confusing and overwhelming to know where to begin a workout routine or healthy lifestyle! That\'s where I come in. My job as a personal trainer is to help educate my clients about the factual science of the human body. I prioritize core development, mobility, strength training, and cardiovascular conditioning with each client and individualize their program based on their goals and needs. I am passionate about inspiring others to take care of themselves and take charge of their life. I encourage consistency in both lifestyle and habits that will lead to increased longevity. I am motivated to help individuals reach their fitness goals. My true passion is helping others pursue the best version of themselves by working towards achieving a healthy balance of fitness, nutrition, and lifestyle. Achieving results is difficult if there are inconsistencies in diet, exercise, and lifestyle choices. That\'s where an accountability coach comes in.',
     credentials: ['NASM-CPT', 'Corrective Exercise Specialist', 'CrossFit Level 1', 'Movement Quality Specialist'],
@@ -160,16 +160,6 @@ const TRAINERS: Trainer[] = [
     specialties: ['Strength & Conditioning', 'Performance'],
     bio: 'David brings passion and expertise to every training session. With a focus on strength and performance, he helps clients achieve their fitness goals through personalized training programs and unwavering support.',
     credentials: ['NASM-CPT', 'Strength & Conditioning Specialist'],
-    socials: { instagram: 'https://instagram.com/unifygym' }
-  },
-  {
-    id: '15',
-    name: 'Meredith Schomer',
-    slug: 'meredith-schomer',
-    headshot: '/content/home/merry.jpg',
-    specialties: ['Strength & Conditioning', 'Performance'],
-    bio: 'Meredith is dedicated to helping clients reach their full potential through personalized training and expert guidance. With a passion for fitness and wellness, she creates effective programs that deliver real results.',
-    credentials: ['NASM-CPT', 'Performance Enhancement Specialist'],
     socials: { instagram: 'https://instagram.com/unifygym' }
   },
   {
