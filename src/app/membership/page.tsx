@@ -9,8 +9,8 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
 const PRICES = {
-  weekly: { gold: 120, platinum: 225, pro: 375 },
-  monthly: { gold: 480, platinum: 900, pro: 1500 },
+  weekly: { gold: 125, platinum: 240, pro: 345 },
+  monthly: { gold: 500, platinum: 960, pro: 1380 },
 };
 
 const PACKAGES = [
