@@ -1,6 +1,7 @@
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import Hero from '@/components/home/Hero';
+import SandblastCallout from '@/components/home/SandblastCallout';
 import Brand from '@/components/home/Brand';
 import Tiles from '@/components/home/Tiles';
 import Team from '@/components/home/Team';
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Hero />
         <Brand />
         <Tiles />
+        <SandblastCallout />
         <Team />
         <GoogleReviews />
         <Services />

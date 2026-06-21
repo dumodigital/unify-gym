@@ -19,7 +19,7 @@ export default function Hero() {
       />
       {/* Subtle overlay for text readability */}
       <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-      <div className="absolute inset-0 grid place-items-center px-4 pt-20 sm:pt-24 md:pt-28 pointer-events-none">
+      <div className="absolute inset-0 grid place-items-center px-4 site-header-offset pointer-events-none">
         <div className="text-center space-y-6 sm:space-y-8 max-w-5xl">
           {/* Animated Heading with SplitText */}
           <div className="overflow-hidden">

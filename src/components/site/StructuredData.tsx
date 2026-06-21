@@ -3,9 +3,14 @@ import Script from 'next/script';
 interface StructuredDataProps {
   type?: 'organization' | 'service' | 'review' | 'product';
   data?: any;
+  id?: string;
 }
 
-export default function StructuredData({ type = 'organization', data }: StructuredDataProps) {
+export default function StructuredData({
+  type = 'organization',
+  data,
+  id = 'structured-data',
+}: StructuredDataProps) {
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
@@ -192,7 +197,7 @@ export default function StructuredData({ type = 'organization', data }: Structur
 
   return (
     <Script
-      id="structured-data"
+      id={id}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(structuredData),

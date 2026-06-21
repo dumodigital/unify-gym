@@ -393,3 +393,19 @@
 }
 
 /* Clean, premium styling - all flashy effects removed */
+
+.site-header-offset {
+  padding-top: calc(5rem + var(--announcement-offset, 0px));
+}
+
+@media (min-width: 640px) {
+  .site-header-offset {
+    padding-top: calc(6rem + var(--announcement-offset, 0px));
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header-offset {
+    padding-top: calc(7rem + var(--announcement-offset, 0px));
+  }
+}

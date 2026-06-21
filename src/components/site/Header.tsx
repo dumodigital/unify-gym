@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import SandblastAnnouncementBar, {
+  ANNOUNCEMENT_BAR_HEIGHT,
+} from '@/components/site/SandblastAnnouncementBar';
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -22,20 +25,35 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [membershipDropdownOpen, setMembershipDropdownOpen] = useState(false);
-  
+  const [announcementVisible, setAnnouncementVisible] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--announcement-offset',
+      announcementVisible ? ANNOUNCEMENT_BAR_HEIGHT : '0px',
+    );
+
+    return () => {
+      document.documentElement.style.setProperty('--announcement-offset', '0px');
+    };
+  }, [announcementVisible]);
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition ${
-        scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
-      }`}
-    >
+    <>
+      <SandblastAnnouncementBar onVisibleChange={setAnnouncementVisible} />
+      <header
+        className={`fixed inset-x-0 z-50 transition ${
+          scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
+        }`}
+        style={{ top: announcementVisible ? ANNOUNCEMENT_BAR_HEIGHT : 0 }}
+      >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-4 py-4 sm:py-5 md:py-6">
         <Link href="/" className="flex items-center">
           <Image
@@ -218,7 +236,7 @@ export default function Header() {
                 </div>
               </div>
             </li>
-            
+
             {nav.slice(3).map((n, index) => (
               <li 
                 key={n.href}
@@ -256,6 +274,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
+      </header>
+    </>
   );
 }
