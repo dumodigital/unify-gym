@@ -1,12 +1,15 @@
 export const SANDBLAST = {
-  calendlyDropInUrl: 'https://calendly.com/unifygym/sandblast-dropin',
-  fivePackUrl: 'https://calendly.com/unifygym/sandblast-5pack',
+  bookingUrl: 'https://calendly.com/unifygym',
+  calendlyDropInUrl: 'https://calendly.com/unifygym',
+  fivePackUrl: 'https://calendly.com/unifygym',
   dropInPrice: 35,
   fivePackPrice: 150,
   schedule: 'Saturdays · 8:00 AM',
   duration: '45 minutes',
   seasonStart: 'June 13',
   seasonDates: 'All summer long · Every Saturday starting June 13 · 8:00 AM',
+  noClassDates: ['July 4', 'July 17'] as const,
+  noClassNote: 'No session on July 4 or July 17.',
   location: 'Glencoe Beach, Glencoe, IL',
   locationNote:
     'Between the boardwalk and the shoreline. Look for the Unify Fitness flag.',
@@ -126,6 +129,10 @@ export const SANDBLAST_FAQ = [
   {
     question: 'How do drop-ins and the 5-pack work?',
     answer: `Drop-ins are $${SANDBLAST.dropInPrice} per session. Book and pay online through Calendly before you arrive. The 5-pack is $${SANDBLAST.fivePackPrice} (save $${SANDBLAST.dropInPrice * 5 - SANDBLAST.fivePackPrice} vs. five separate drop-ins) and is ideal if you plan to come regularly all summer. After purchasing, reserve your Saturday spots through the same booking flow. Sessions are non-transferable; see refund details below.`,
+  },
+  {
+    question: 'Are there any dates without a session?',
+    answer: `${SANDBLAST.noClassNote} All other Saturdays through the summer run as scheduled at 8:00 AM, weather permitting.`,
   },
   {
     question: 'What is the refund and cancellation policy?',

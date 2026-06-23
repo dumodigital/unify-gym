@@ -60,6 +60,9 @@ function FinalCTACard({ className = '' }: { className?: string }) {
       <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-neutral-300 sm:text-base lg:max-w-md">
         {SANDBLAST.seasonDates} · {SANDBLAST.location}
       </p>
+      <p className="mt-2 text-sm font-medium text-primary">
+        {SANDBLAST.noClassNote}
+      </p>
       <p className="mt-2 text-sm text-neutral-400">
         ${SANDBLAST.dropInPrice} drop-in · ${SANDBLAST.fivePackPrice} 5-pack
       </p>

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, CalendarOff } from 'lucide-react';
 import { SANDBLAST, SCHEDULE_DETAILS } from '@/lib/sandblast-data';
 import { fadeInUp, staggerChildren } from '@/components/sandblast/motion';
 
@@ -47,6 +47,16 @@ export default function EventDetails() {
               ))}
             </ul>
 
+            <div className="mt-6 rounded-xl border border-primary/30 bg-primary/10 px-4 py-4 sm:px-5">
+              <div className="flex items-start gap-3">
+                <CalendarOff className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-sm text-neutral-200 sm:text-base">
+                  <span className="font-semibold text-white">Schedule note:</span>{' '}
+                  {SANDBLAST.noClassNote}
+                </p>
+              </div>
+            </div>
+
             <p className="mt-8 text-sm text-neutral-400">
               In collaboration with{' '}
               <span className="text-neutral-300">{SANDBLAST.partner}</span>
@@ -58,17 +68,17 @@ export default function EventDetails() {
             <div className="space-y-4 md:hidden">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/content/sandblast/lake-michigan-walk.png"
-                  alt="Glencoe Beach along Lake Michigan"
+                  src="/content/sandblast/slam-balls-beach.png"
+                  alt="Sandblast workout equipment on the beach"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-[center_60%]"
                   sizes="100vw"
                 />
               </div>
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/content/sandblast/beach-catamarans.png"
-                  alt="Sailboats on the sand at Glencoe Beach"
+                  src="/content/sandblast/sandblast-flag.png"
+                  alt="Sandblast flag at Glencoe Beach"
                   fill
                   className="object-cover object-center"
                   sizes="100vw"
@@ -81,10 +91,10 @@ export default function EventDetails() {
               <div className="relative z-10 w-full max-w-[380px]">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
                   <Image
-                    src="/content/sandblast/hero-workout-mobile.png"
-                    alt="Outdoor group workout at Glencoe Beach"
+                    src="/content/sandblast/slam-balls-beach.png"
+                    alt="Sandblast workout equipment on the beach"
                     fill
-                    className="object-cover object-[center_35%]"
+                    className="object-cover object-[center_55%]"
                     sizes="(max-width: 1024px) 380px, 380px"
                   />
                 </div>
@@ -92,10 +102,10 @@ export default function EventDetails() {
               <div className="absolute -bottom-8 -right-2 z-20 w-[58%] max-w-[260px] lg:-right-6">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-4 border-[#0B0B0C] shadow-2xl">
                   <Image
-                    src="/content/sandblast/beach-catamarans.png"
-                    alt="Sailboats on the sand at Glencoe Beach"
+                    src="/content/sandblast/sandblast-flag.png"
+                    alt="Sandblast flag at Glencoe Beach"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-[center_40%]"
                     sizes="260px"
                   />
                 </div>
