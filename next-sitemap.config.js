@@ -4,6 +4,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,
+  // Seasonal: restore next summer
+  exclude: ['/sandblast'],
   additionalPaths: async (config) => [
     {
       loc: '/services/boxing',
