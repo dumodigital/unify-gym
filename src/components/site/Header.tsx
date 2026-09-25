@@ -57,22 +57,22 @@ export default function Header() {
           scrolled ? 'bg-neutral-900/90 backdrop-blur border-b border-neutral-800' : 'bg-transparent'
         }`}
       >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-4 py-4 sm:py-5 md:py-6">
-        <Link href="/" className="flex items-center">
+      <nav className="mx-auto flex min-w-0 max-w-7xl items-center justify-between gap-2 px-3 py-4 sm:px-4 sm:py-5 md:py-6">
+        <Link href="/" className="min-w-0 shrink">
           <Image
             src="/content/home/Unify-Fitness.png"
             alt="Unify Fitness"
             width={250}
             height={75}
-            className="h-14 sm:h-16 md:h-20 w-auto brightness-0 invert sepia-0 saturate-200 hue-rotate-0"
+            className="h-10 w-auto max-w-[140px] brightness-0 invert sepia-0 saturate-200 hue-rotate-0 sm:h-16 sm:max-w-none md:h-20"
             style={{filter: 'brightness(0) invert(1)'}}
             priority
             quality={75}
-            sizes="(max-width: 768px) 224px, 320px"
+            sizes="(max-width: 768px) 140px, 320px"
           />
         </Link>
         
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 md:gap-4">
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8 uppercase tracking-wide2 text-sm">
             {nav.slice(0, 2).map((n) => (
@@ -124,6 +124,12 @@ export default function Header() {
                 </div>
               </div>
             </li>
+
+            <li>
+              <Link href="/recovery" prefetch className="hover:text-primary transition-colors">
+                Recovery
+              </Link>
+            </li>
             
             {nav.slice(3).map((n) => (
               <li key={n.href}>
@@ -137,14 +143,15 @@ export default function Header() {
             href="https://calendly.com/unifygym"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white border border-white/20 px-3 sm:px-4 py-1.5 sm:py-2 md:px-5 md:py-2.5 text-xs sm:text-sm font-medium hover:border-primary hover:text-primary transition-all duration-200 rounded-full"
+            className="whitespace-nowrap rounded-full border border-white/20 px-2.5 py-1.5 text-[11px] font-medium text-white transition-all duration-200 hover:border-primary hover:text-primary sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm"
           >
-            Join Today
+            <span className="sm:hidden">Join</span>
+            <span className="hidden sm:inline">Join Today</span>
           </Link>
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden relative flex flex-col justify-center items-center w-9 sm:w-10 h-9 sm:h-10 rounded-sm border border-white/10 hover:border-primary/30 transition-all duration-300 hover:bg-white/5 group"
+            className="relative flex h-9 w-9 shrink-0 flex-col items-center justify-center rounded-sm border border-white/30 sm:h-10 sm:w-10 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -238,6 +245,27 @@ export default function Header() {
                   ))}
                 </div>
               </div>
+            </li>
+
+            <li
+              className={`transform transition-all duration-500 ease-out ${
+                mobileMenuOpen
+                  ? 'translate-x-0 opacity-100'
+                  : 'translate-x-4 opacity-0'
+              }`}
+              style={{ transitionDelay: mobileMenuOpen ? '250ms' : '0ms' }}
+            >
+              <Link
+                className="group block py-4 px-6 text-white hover:text-primary transition-all duration-300 uppercase tracking-[0.15em] text-sm font-light border-b border-neutral-800/50 hover:border-primary/30 hover:bg-gradient-to-r hover:from-primary/5 hover:to-transparent rounded-sm"
+                href="/recovery"
+                onClick={() => setMobileMenuOpen(false)}
+                prefetch
+              >
+                <span className="relative">
+                  Recovery
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary/50 transition-all duration-300 group-hover:w-full"></span>
+                </span>
+              </Link>
             </li>
 
             {nav.slice(3).map((n, index) => (

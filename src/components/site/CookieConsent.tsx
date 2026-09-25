@@ -97,7 +97,7 @@ export default function CookieConsent() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 transform transition-transform duration-500 ease-out">
       <div className="bg-gradient-to-r from-neutral-900 via-black to-neutral-900 border-t border-neutral-700 shadow-2xl">
-        <div className="mx-auto max-w-7xl px-6 py-4">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4">
           {!showPreferences ? (
             <div className="space-y-4">
               {/* Message Section */}
@@ -128,22 +128,22 @@ export default function CookieConsent() {
                 </div>
                 
                 {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-row sm:gap-3">
                   <button
                     onClick={() => setShowPreferences(true)}
-                    className="px-4 py-2 text-sm border border-neutral-600 text-neutral-200 rounded-lg hover:bg-neutral-800 transition-colors text-center"
+                    className="min-w-0 px-3 py-2 text-sm border border-neutral-600 text-neutral-200 rounded-lg hover:bg-neutral-800 transition-colors text-center sm:px-4"
                   >
                     Preferences
                   </button>
                   <button
                     onClick={handleRejectAll}
-                    className="px-4 py-2 text-sm bg-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-600 transition-colors text-center"
+                    className="min-w-0 px-3 py-2 text-sm bg-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-600 transition-colors text-center sm:px-4"
                   >
                     Reject All
                   </button>
                   <button
                     onClick={handleAcceptAll}
-                    className="px-6 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium text-center"
+                    className="col-span-2 px-4 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium text-center sm:col-auto sm:w-auto sm:px-6"
                   >
                     Accept All
                   </button>

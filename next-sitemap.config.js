@@ -43,7 +43,7 @@ module.exports = {
     } else if (path.includes('/services/')) {
       priority = 0.8;
       changefreq = 'weekly';
-    } else if (path === '/membership' || path === '/trainers') {
+    } else if (path === '/membership' || path === '/trainers' || path === '/recovery') {
       priority = 0.9;
       changefreq = 'weekly';
     } else if (path === '/about' || path === '/contact') {

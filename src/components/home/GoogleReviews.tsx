@@ -90,15 +90,14 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 const ReviewCard = ({ review }: { review: Review }) => {
   return (
-    <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 p-3 sm:p-4 mx-1 sm:mx-3 h-32 sm:h-40 flex flex-col sm:flex-row gap-3 sm:gap-4 border border-slate-100 hover:border-slate-200 group">
-      {/* Left section - Avatar, Name, Date, Stars */}
-      <div className="flex flex-col sm:flex-shrink-0 sm:w-48">
-        <div className="flex items-center gap-2 mb-1 sm:mb-2">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-slate-600 to-slate-800 rounded-full flex items-center justify-center text-white font-semibold text-sm sm:text-base shadow-md group-hover:shadow-lg transition-shadow flex-shrink-0">
+    <div className="flex flex-col gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-sm sm:mx-3 sm:h-40 sm:flex-row sm:gap-4">
+      <div className="flex shrink-0 flex-col sm:w-48">
+        <div className="mb-1 flex items-center gap-2 sm:mb-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-slate-600 to-slate-800 text-sm font-semibold text-white shadow-md transition-shadow group-hover:shadow-lg sm:h-10 sm:w-10 sm:text-base">
             {review.name.charAt(0)}
           </div>
-          <div className="flex-1 min-w-0">
-            <h4 className="font-semibold text-slate-900 text-xs sm:text-sm truncate">{review.name}</h4>
+          <div className="min-w-0 flex-1">
+            <h4 className="truncate text-xs font-semibold text-slate-900 sm:text-sm">{review.name}</h4>
             <p className="text-xs text-slate-500">{review.date}</p>
           </div>
         </div>
@@ -106,16 +105,9 @@ const ReviewCard = ({ review }: { review: Review }) => {
           <StarRating rating={review.rating} />
         </div>
       </div>
-      
-      {/* Right section - Quote */}
-      <blockquote className="text-slate-700 leading-snug text-xs sm:text-sm font-medium flex-1 overflow-hidden">
-        <span 
-          className="block overflow-hidden line-clamp-3 sm:line-clamp-4"
-          style={{
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical'
-          }}
-        >"{review.text}"</span>
+
+      <blockquote className="min-w-0 flex-1 text-sm font-medium leading-relaxed text-slate-700 sm:overflow-hidden sm:text-sm sm:leading-snug">
+        <span className="block sm:line-clamp-4">“{review.text}”</span>
       </blockquote>
     </div>
   );
@@ -203,40 +195,29 @@ export default function GoogleReviews() {
           </div>
 
           {/* Mobile View - Show 1 card */}
-          <div className="md:hidden relative">
-            <div className="overflow-hidden mx-8">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ 
-                  transform: `translateX(-${(currentIndex * 100)}%)`,
-                  width: `${(reviews.length * 100)}%`
-                }}
-              >
-                {reviews.map((review) => (
-                  <div key={review.id} className="w-full flex-shrink-0 px-1">
-                    <ReviewCard review={review} />
-                  </div>
-                ))}
-              </div>
+          <div className="relative md:hidden">
+            <div className="px-12">
+              <ReviewCard review={reviews[currentIndex]} />
             </div>
-            
-            {/* Mobile Navigation Arrows - positioned relative to mobile container */}
+
             <button
+              type="button"
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-20 touch-manipulation"
+              className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-3 shadow-lg touch-manipulation"
               aria-label="Previous review"
             >
-              <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
             <button
+              type="button"
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-slate-200 z-20 touch-manipulation"
+              className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-3 shadow-lg touch-manipulation"
               aria-label="Next review"
             >
-              <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>

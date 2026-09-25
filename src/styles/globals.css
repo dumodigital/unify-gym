@@ -394,6 +394,29 @@
 
 /* Clean, premium styling - all flashy effects removed */
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes recovery-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-recovery-marquee {
+  animation: recovery-marquee 150s linear infinite;
+  will-change: transform;
+}
+
 .site-header-offset {
   padding-top: calc(5rem + var(--announcement-offset, 0px));
 }

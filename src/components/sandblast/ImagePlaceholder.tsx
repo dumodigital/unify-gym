@@ -8,6 +8,13 @@ type Props = {
   tag?: string;
   className?: string;
   swapTo?: string;
+  tone?: 'cyan' | 'infrared' | 'clinical';
+};
+
+const toneClasses = {
+  cyan: 'border-[#00C2FF]/50 bg-gradient-to-br from-[#0A2E4D] via-[#0c3a5e] to-[#00C2FF]/20',
+  infrared: 'border-[#E07A3D]/50 bg-gradient-to-br from-[#3D1A0A] via-[#5C2A12] to-[#E07A3D]/20',
+  clinical: 'border-white/25 bg-gradient-to-br from-[#121418] via-[#1C2228] to-white/10',
 };
 
 export default function ImagePlaceholder({
@@ -18,10 +25,11 @@ export default function ImagePlaceholder({
   tag,
   className = '',
   swapTo,
+  tone = 'cyan',
 }: Props) {
   return (
     <div
-      className={`relative w-full ${ratio} overflow-hidden rounded-2xl border-2 border-dashed border-[#00C2FF]/50 bg-gradient-to-br from-[#0A2E4D] via-[#0c3a5e] to-[#00C2FF]/20 ${className}`}
+      className={`relative w-full ${ratio} overflow-hidden rounded-2xl border-2 border-dashed ${toneClasses[tone]} ${className}`}
       role="img"
       aria-label={`Image placeholder: ${label}`}
     >

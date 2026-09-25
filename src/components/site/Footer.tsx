@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { FaInstagram, FaTwitter, FaFacebookF, FaDumbbell } from 'react-icons/fa6';
 import { GiWeightLiftingUp, GiMuscleUp, GiBoxingGlove } from 'react-icons/gi';
-import ScrollToTop from './ScrollToTop';
 
 export default function Footer() {
   return (
@@ -44,11 +43,10 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium text-white hover:text-primary transition-colors duration-200 cursor-default">Pages</h3>
+            <h3 className="text-sm font-medium text-white hover:text-primary transition-colors duration-200 cursor-default">Navigate</h3>
             <div className="space-y-3 text-sm text-neutral-400">
-              <Link href="/" className="block hover:text-white transition-colors">Home</Link>
-              <Link href="/about" className="block hover:text-white transition-colors">About Us</Link>
               <Link href="/membership" className="block hover:text-white transition-colors">Membership</Link>
+              <Link href="/recovery" className="block hover:text-white transition-colors">Recovery</Link>
               <Link href="/trainers" className="block hover:text-white transition-colors">Trainers</Link>
               <Link href="/about" className="block hover:text-white transition-colors">Our Facility</Link>
               <Link href="/contact" className="block hover:text-white transition-colors">Contact Us</Link>
@@ -125,7 +123,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <ScrollToTop />
     </footer>
   );
 }
